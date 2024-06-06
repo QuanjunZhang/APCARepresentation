@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_66/TypeCheck/Closure_66_TypeCheck_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_66/TypeCheck/Closure_66_TypeCheck_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -513,7 +513,9 @@
+         // Object literal keys are handled with OBJECTLIT
+         if (!NodeUtil.isObjectLitKey(n, n.getParent())) {
+           ensureTyped(t, n, STRING_TYPE);
++        } else {
+           // Object literal keys are not typeable
++          typeable = false;
+         }
+         break;
+ 

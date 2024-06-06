@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch22/Lang_46/StringEscapeUtils/Lang_46_StringEscapeUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch22/Lang_46/StringEscapeUtils/Lang_46_StringEscapeUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -239,6 +239,7 @@
+                     case '\\' :
+                         out.write('\\');
+                         out.write('\\');
++                        if(escapeSingleQuote)
+                         break;
+                     case '/' :
+                             out.write('\\');

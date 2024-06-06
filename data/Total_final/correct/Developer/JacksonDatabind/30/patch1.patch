@@ -1,0 +1,51 @@
+--- a/src/main/java/com/fasterxml/jackson/databind/util/TokenBuffer.java
++++ b/src/main/java/com/fasterxml/jackson/databind/util/TokenBuffer.java
+@@ -77,6 +77,7 @@ public class TokenBuffer
+      *
+      * @since 2.7
+      */
++    protected boolean _forceBigDecimal;
+     
+     /*
+     /**********************************************************
+@@ -185,11 +186,17 @@ public class TokenBuffer
+         _hasNativeTypeIds = p.canReadTypeId();
+         _hasNativeObjectIds = p.canReadObjectId();
+         _mayHaveNativeIds = _hasNativeTypeIds | _hasNativeObjectIds;
++        _forceBigDecimal = (ctxt == null) ? false
++                : ctxt.isEnabled(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS);
+     }
+ 
+     /**
+      * @since 2.7
+      */
++    public TokenBuffer forceUseOfBigDecimal(boolean b) {
++        _forceBigDecimal = b;
++        return this;
++    }
+ 
+     @Override
+     public Version version() {
+@@ -956,11 +963,14 @@ sb.append("NativeObjectIds=").append(_hasNativeObjectIds).append(",");
+             }
+             break;
+         case VALUE_NUMBER_FLOAT:
++            if (_forceBigDecimal) {
+                 /* 10-Oct-2015, tatu: Ideally we would first determine whether underlying
+                  *   number is already decoded into a number (in which case might as well
+                  *   access as number); or is still retained as text (in which case we
+                  *   should further defer decoding that may not need BigDecimal):
+                  */
++                writeNumber(p.getDecimalValue());
++            } else {
+                 switch (p.getNumberType()) {
+                 case BIG_DECIMAL:
+                     writeNumber(p.getDecimalValue());
+@@ -970,6 +980,7 @@ sb.append("NativeObjectIds=").append(_hasNativeObjectIds).append(",");
+                     break;
+                 default:
+                     writeNumber(p.getDoubleValue());
++                }
+             }
+             break;
+         case VALUE_TRUE:

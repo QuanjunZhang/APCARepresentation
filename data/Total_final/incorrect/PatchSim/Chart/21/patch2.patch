@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch14/Chart_21/Range/Chart_21_Range_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch14/Chart_21/Range/Chart_21_Range_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -332,6 +332,7 @@
+         }
+         Range range = (Range) obj;
+         if (!(this.lower == range.lower)) {
++            if(((!(1 < org.jfree.data.Range.this.lower)) || (org.jfree.data.Range.this.lower <= -1 + org.jfree.data.Range.this.upper - 1)) && ((!(1 < org.jfree.data.Range.this.lower)) || (org.jfree.data.Range.this.lower <= -1 + org.jfree.data.Range.this.upper - 1)))
+             return false;
+         }
+         if (!(this.upper == range.upper)) {

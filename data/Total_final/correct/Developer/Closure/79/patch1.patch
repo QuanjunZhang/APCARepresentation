@@ -1,0 +1,21 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_79/Normalize/Closure_79_Normalize_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_79/Normalize/Closure_79_Normalize_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -119,7 +119,7 @@
+   public void process(Node externs, Node root) {
+     new NodeTraversal(
+         compiler, new NormalizeStatements(compiler, assertOnChange))
+-        .traverse(root);
++        .traverseRoots(externs, root);
+     if (MAKE_LOCAL_NAMES_UNIQUE) {
+       MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_79/VarCheck/Closure_79_VarCheck_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_79/VarCheck/Closure_79_VarCheck_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -218,6 +218,7 @@
+     getSynthesizedExternsRoot().addChildToBack(
+         new Node(Token.VAR, nameNode));
+     varsToDeclareInExterns.remove(varName);
++    compiler.reportCodeChange();
+   }
+ 
+   /**

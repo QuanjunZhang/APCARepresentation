@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_27/Fraction/Math_27_Fraction_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_27/Fraction/Math_27_Fraction_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -594,7 +594,7 @@
+      * @return the fraction percentage as a <tt>double</tt>.
+      */
+     public double percentageValue() {
+-        return multiply(100).doubleValue();
++        return 100 * doubleValue();
+     }
+ 
+     /**

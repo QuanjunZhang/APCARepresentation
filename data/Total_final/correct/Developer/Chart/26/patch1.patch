@@ -1,0 +1,16 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_26/Axis/Chart_26_Axis_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_26/Axis/Chart_26_Axis_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -1189,11 +1189,13 @@
+         }
+         if (plotState != null && hotspot != null) {
+             ChartRenderingInfo owner = plotState.getOwner();
++            if (owner != null) {
+                 EntityCollection entities = owner.getEntityCollection();
+                 if (entities != null) {
+                     entities.add(new AxisLabelEntity(this, hotspot, 
+                             this.labelToolTip, this.labelURL));
+                 }
++            }
+         }
+         return state;
+ 

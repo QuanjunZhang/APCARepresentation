@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_71/RungeKuttaIntegrator/Math_71_RungeKuttaIntegrator_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_71/RungeKuttaIntegrator/Math_71_RungeKuttaIntegrator_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -177,6 +177,9 @@
+                 // it is so small (much probably exactly 0 due to limited accuracy)
+                 // that the code above would fail handling it.
+                 // So we set up an artificial 0 size step by copying states
++                interpolator.storeTime(stepStart);
++                System.arraycopy(y, 0, yTmp, 0, y0.length);
++                stepSize = 0;
+                 loop     = false;
+             } else {
+                 // reject the step to match exactly the next switch time

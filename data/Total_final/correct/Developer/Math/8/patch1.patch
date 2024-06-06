@@ -1,0 +1,18 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_8/DiscreteDistribution/Math_8_DiscreteDistribution_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_8/DiscreteDistribution/Math_8_DiscreteDistribution_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -178,13 +178,13 @@
+      * @throws NotStrictlyPositiveException if {@code sampleSize} is not
+      * positive.
+      */
+-    public T[] sample(int sampleSize) throws NotStrictlyPositiveException {
++    public Object[] sample(int sampleSize) throws NotStrictlyPositiveException {
+         if (sampleSize <= 0) {
+             throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+                     sampleSize);
+         }
+ 
+-        final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
++        final Object[] out = new Object[sampleSize];
+ 
+         for (int i = 0; i < sampleSize; i++) {
+             out[i] = sample();

@@ -1,0 +1,14 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch153/Lang_58/NumberUtils/Lang_58_NumberUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch153/Lang_58/NumberUtils/Lang_58_NumberUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -449,10 +449,7 @@
+             switch (lastChar) {
+                 case 'l' :
+                 case 'L' :
+-                    if (dec == null
+-                        && exp == null
+-                        && isDigits(numeric.substring(1))
+-                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++                    if (((dec == null) && (exp == null))) {
+                         try {
+                             return createLong(numeric);
+                         } catch (NumberFormatException nfe) {

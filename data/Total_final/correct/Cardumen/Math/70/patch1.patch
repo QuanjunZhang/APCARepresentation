@@ -1,0 +1,18 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/Cardumen/Correct/Math/patch1-Math-70-Cardumen.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/Cardumen/Correct/Math/patch1-Math-70-Cardumen.fixed	2020-11-02 21:27:15.000000000 +0100
+@@ -67,11 +67,12 @@
+     }
+ 
+     /** {@inheritDoc} */
+-    public double solve(final UnivariateRealFunction f, double min, double max, double initial)
+-        throws MaxIterationsExceededException, FunctionEvaluationException {
+-        return solve(min, max);
++ 	public double solve(UnivariateRealFunction f, double min, double max, double initial) throws 
++ 	math.FunctionEvaluationException, math.MaxIterationsExceededException {
++		return solve(f, min, max);
+     }
+ 
++ 
+     /** {@inheritDoc} */
+     public double solve(final UnivariateRealFunction f, double min, double max)
+         throws MaxIterationsExceededException, FunctionEvaluationException {

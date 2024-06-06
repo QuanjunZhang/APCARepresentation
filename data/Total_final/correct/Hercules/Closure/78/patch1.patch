@@ -1,0 +1,20 @@
+--- patch1-Closure-78-Hercules.buggy	2020-11-06 21:44:53.000000000 +0800
++++ patch1-Closure-78-Hercules.fixed	2020-11-06 21:45:48.000000000 +0800
+@@ -708,7 +708,7 @@
+         break;
+       case Token.MOD:
+         if (rval == 0) {
+-          error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
++          error(DiagnosticType.disabled("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+           return null;
+         }
+         result = lval % rval;
+@@ -715,7 +715,7 @@
+         break;
+       case Token.DIV:
+         if (rval == 0) {
+-          error(DiagnosticType.error("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
++          error(DiagnosticType.disabled("JSC_DIVIDE_BY_0_ERROR", "Divide by 0"), right);
+           return null;
+         }
+         result = lval / rval;

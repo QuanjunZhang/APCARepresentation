@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_33/SimplexTableau/Math_33_SimplexTableau_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_33/SimplexTableau/Math_33_SimplexTableau_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -335,7 +335,7 @@
+         // positive cost non-artificial variables
+         for (int i = getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+             final double entry = tableau.getEntry(0, i);
+-            if (Precision.compareTo(entry, 0d, maxUlps) > 0) {
++            if (Precision.compareTo(entry, 0d, epsilon) > 0) {
+                 columnsToDrop.add(i);
+             }
+         }

@@ -1,0 +1,16 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_102/Normalize/Closure_102_Normalize_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_102/Normalize/Closure_102_Normalize_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -86,12 +86,12 @@
+   @Override
+   public void process(Node externs, Node root) {
+     NodeTraversal.traverse(compiler, root, this);
++    removeDuplicateDeclarations(root);
+     if (MAKE_LOCAL_NAMES_UNIQUE) {
+       MakeDeclaredNamesUnique renamer = new MakeDeclaredNamesUnique();
+       NodeTraversal t = new NodeTraversal(compiler, renamer);
+       t.traverseRoots(externs, root);
+     }
+-    removeDuplicateDeclarations(root);
+     new PropogateConstantAnnotations(compiler, assertOnChange)
+         .process(externs, root);
+   }

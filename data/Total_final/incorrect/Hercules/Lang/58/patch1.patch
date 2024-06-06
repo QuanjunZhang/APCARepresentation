@@ -1,0 +1,14 @@
+--- patch1-Lang-58-Hercules.buggy	2020-11-06 21:25:36.000000000 +0800
++++ patch1-Lang-58-Hercules.fixed	2020-11-06 21:27:27.000000000 +0800
+@@ -449,10 +449,7 @@
+             switch (lastChar) {
+                 case 'l' :
+                 case 'L' :
+-                    if (dec == null
+-                        && exp == null
+-                        && isDigits(numeric.substring(1))
+-                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++                    if ((((dec == null) && (exp == null)) || (isDigits(numeric.substring(1)))) && (((numeric.charAt(0)) == '-') || (isDigit(numeric.charAt(0))))) {
+                         try {
+                             return createLong(numeric);
+                         } catch (NumberFormatException nfe) {

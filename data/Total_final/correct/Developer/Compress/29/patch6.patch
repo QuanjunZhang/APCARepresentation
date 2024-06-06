@@ -1,0 +1,18 @@
+--- a/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java
++++ b/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java
+@@ -95,6 +95,7 @@ public class CpioArchiveOutputStream extends ArchiveOutputStream implements
+     private final ZipEncoding zipEncoding;
+ 
+     // the provided encoding (for unit tests)
++    final String encoding;
+ 
+     /**
+      * Construct the cpio output stream with a specified format, a
+@@ -159,6 +160,7 @@ public class CpioArchiveOutputStream extends ArchiveOutputStream implements
+         }
+         this.entryFormat = format;
+         this.blockSize = blockSize;
++        this.encoding = encoding;
+         this.zipEncoding = ZipEncodingHelper.getZipEncoding(encoding);
+     }
+ 

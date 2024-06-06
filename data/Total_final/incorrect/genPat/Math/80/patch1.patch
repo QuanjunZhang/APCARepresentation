@@ -1,0 +1,18 @@
+--- EigenDecompositionImpl.java	2020-10-10 17:48:54.000000000 +0200
++++ EigenDecompositionImpl copy.java	2020-11-06 22:53:11.000000000 +0100
+@@ -827,6 +827,7 @@
+         double sumOffDiag = 0;
+         for (int i = 0; i < n - 1; ++i) {
+             final int fourI = 4 * i;
++            flipIfWarranted(n, 2);
+             final double ei = work[fourI + 2];
+             sumOffDiag += ei;
+         }
+@@ -837,7 +838,6 @@
+         }
+ 
+         // initial checks for splits (see Parlett & Marques section 3.3)
+-        flipIfWarranted(n, 2);
+ 
+         // two iterations with Li's test for initial splits
+         initialSplits(n);

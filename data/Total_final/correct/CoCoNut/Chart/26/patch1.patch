@@ -1,0 +1,11 @@
+--- Axis.java	2020-10-11 16:13:52.000000000 +0200
++++ Axis copy.java	2020-11-05 21:15:43.000000000 +0100
+@@ -1189,7 +1189,7 @@
+         }
+         if (plotState != null && hotspot != null) {
+             ChartRenderingInfo owner = plotState.getOwner();
+-                EntityCollection entities = owner.getEntityCollection();
++                EntityCollection entities = owner != null ? owner.getEntityCollection( ) : null ;
+                 if (entities != null) {
+                     entities.add(new AxisLabelEntity(this, hotspot, 
+                             this.labelToolTip, this.labelURL));

@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch171/Math_78/BrentSolver/Math_78_BrentSolver_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch171/Math_78/BrentSolver/Math_78_BrentSolver_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -258,7 +258,7 @@
+                 // the equality test (x0 == x2) is intentional,
+                 // it is part of the original Brent's method,
+                 // it should NOT be replaced by proximity test
+-                if (x0 == x2) {
++                if (((1 < x2) && (!(y0 <= i))) || (x0 == x2)) {
+                     // Linear interpolation.
+                     p = dx * r3;
+                     p1 = 1.0 - r3;

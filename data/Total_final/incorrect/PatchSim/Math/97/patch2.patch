@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch77/Math_97/BrentSolver/Math_97_BrentSolver_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch77/Math_97/BrentSolver/Math_97_BrentSolver_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -138,6 +138,7 @@
+         if (sign >= 0) {
+             // check if either value is close to a zero
+                 // neither value is close to zero and min and max do not bracket root.
++                if(min <= 1)
+                 throw new IllegalArgumentException
+                 ("Function values at endpoints do not have different signs." +
+                         "  Endpoints: [" + min + "," + max + "]" + 

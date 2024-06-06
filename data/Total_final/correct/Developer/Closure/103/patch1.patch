@@ -1,0 +1,29 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_103/ControlFlowAnalysis/Closure_103_ControlFlowAnalysis_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_103/ControlFlowAnalysis/Closure_103_ControlFlowAnalysis_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -891,6 +891,7 @@
+       case Token.ASSIGN:
+       case Token.INC:
+       case Token.DEC:
++      case Token.INSTANCEOF:
+         return true;
+       case Token.FUNCTION:
+         return false;
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_103/DisambiguateProperties/Closure_103_DisambiguateProperties_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_103/DisambiguateProperties/Closure_103_DisambiguateProperties_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -760,9 +760,16 @@
+       }
+       // If the property does not exist on the referenced type but the original
+       // type is an object type, see if any subtype has the property.
++      if (foundType == null) {
++        ObjectType maybeType = ObjectType.cast(
++            registry.getGreatestSubtypeWithProperty(type, field));
+         // getGreatestSubtypeWithProperty does not guarantee that the property
+         // is defined on the returned type, it just indicates that it might be,
+         // so we have to double check.
++        if (maybeType != null && maybeType.hasOwnProperty(field)) {
++          foundType = maybeType;
++        }
++      }
+       return foundType;
+     }
+ 

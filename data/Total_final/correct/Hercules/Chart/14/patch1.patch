@@ -1,0 +1,24 @@
+--- patch1_1-Chart-14-Hercules.buggy	2020-11-03 20:12:59.000000000 +0800
++++ patch1_1-Chart-14-Hercules.fixed	2020-11-08 22:01:13.000000000 +0800
+@@ -2290,6 +2290,9 @@
+             markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(
+                     index));
+         }
++        if ((marker == null) || (markers == null))
++            return false;
++            
+         boolean removed = markers.remove(marker);
+         if (removed && notify) {
+             fireChangeEvent();
+--- patch1_2-Chart-14-Hercules.buggy	2020-11-08 21:55:26.000000000 +0800
++++ patch1_2-Chart-14-Hercules.fixed	2020-11-08 21:56:29.000000000 +0800
+@@ -2526,6 +2526,9 @@
+             markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(
+                     index));
+         }
++        if ((marker == null) || (markers == null))
++            return false;
++            
+         boolean removed = markers.remove(marker);
+         if (removed && notify) {
+             fireChangeEvent();

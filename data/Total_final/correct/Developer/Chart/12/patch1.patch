@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_12/MultiplePiePlot/Chart_12_MultiplePiePlot_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_12/MultiplePiePlot/Chart_12_MultiplePiePlot_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -142,7 +142,7 @@
+      */
+     public MultiplePiePlot(CategoryDataset dataset) {
+         super();
+-        this.dataset = dataset;
++        setDataset(dataset);
+         PiePlot piePlot = new PiePlot(null);
+         this.pieChart = new JFreeChart(piePlot);
+         this.pieChart.removeLegend();

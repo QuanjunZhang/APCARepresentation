@@ -1,0 +1,21 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_27/NumberUtils/Lang_27_NumberUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_27/NumberUtils/Lang_27_NumberUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -476,7 +476,7 @@
+         if (decPos > -1) {
+ 
+             if (expPos > -1) {
+-                if (expPos < decPos) {
++                if (expPos < decPos || expPos > str.length()) {
+                     throw new NumberFormatException(str + " is not a valid number.");
+                 }
+                 dec = str.substring(decPos + 1, expPos);
+@@ -486,6 +486,9 @@
+             mant = str.substring(0, decPos);
+         } else {
+             if (expPos > -1) {
++                if (expPos > str.length()) {
++                    throw new NumberFormatException(str + " is not a valid number.");
++                }
+                 mant = str.substring(0, expPos);
+             } else {
+                 mant = str;

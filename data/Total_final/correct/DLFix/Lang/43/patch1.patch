@@ -1,0 +1,10 @@
+--- ExtendedMessageFormat.java	2020-10-10 17:41:09.000000000 +0200
++++ ExtendedMessageFormat copy.java	2020-11-07 15:18:32.000000000 +0100
+@@ -419,6 +419,7 @@
+         int start = pos.getIndex();
+         char[] c = pattern.toCharArray();
+         if (escapingOn && c[start] == QUOTE) {
++            next(pos)
+             return appendTo == null ? null : appendTo.append(QUOTE);
+         }
+         int lastHold = start;

@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_38/CodeConsumer/Closure_38_CodeConsumer_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_38/CodeConsumer/Closure_38_CodeConsumer_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -242,7 +242,7 @@
+     // x--4 (which is a syntax error).
+     char prev = getLastChar();
+     boolean negativeZero = isNegativeZero(x);
+-    if (x < 0 && prev == '-') {
++    if ((x < 0 || negativeZero) && prev == '-') {
+       add(" ");
+     }
+ 

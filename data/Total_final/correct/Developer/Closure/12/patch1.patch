@@ -1,0 +1,15 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_12/MaybeReachingVariableUse/Closure_12_MaybeReachingVariableUse_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_12/MaybeReachingVariableUse/Closure_12_MaybeReachingVariableUse_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -157,6 +157,12 @@
+   }
+ 
+   private boolean hasExceptionHandler(Node cfgNode) {
++    List<DiGraphEdge<Node, Branch>> branchEdges = getCfg().getOutEdges(cfgNode);
++    for (DiGraphEdge<Node, Branch> edge : branchEdges) {
++      if (edge.getValue() == Branch.ON_EX) {
++        return true;
++      }
++    }
+     return false;
+   }
+ 

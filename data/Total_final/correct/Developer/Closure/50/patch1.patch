@@ -1,0 +1,24 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_50/PeepholeReplaceKnownMethods/Closure_50_PeepholeReplaceKnownMethods_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_50/PeepholeReplaceKnownMethods/Closure_50_PeepholeReplaceKnownMethods_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -373,7 +373,7 @@
+ 
+     Node right = callTarget.getNext();
+     if (right != null) {
+-      if (!NodeUtil.isImmutableValue(right)) {
++      if (right.getNext() != null || !NodeUtil.isImmutableValue(right)) {
+         return n;
+       }
+     }
+@@ -386,7 +386,12 @@
+       return n;
+     }
+ 
++    if (right != null && right.getType() == Token.STRING
++        && ",".equals(right.getString())) {
+       // "," is the default, it doesn't need to be explicit
++      n.removeChild(right);
++      reportCodeChange();
++    }
+ 
+     String joinString = (right == null) ? "," : NodeUtil.getStringValue(right);
+     List<Node> arrayFoldedChildren = Lists.newLinkedList();

@@ -1,0 +1,17 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Chart/patch1-Chart-13-jKali.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Chart/patch1-Chart-13-jKali.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -440,11 +440,12 @@
+             Size2D size = this.bottomBlock.arrange(g2, c2);
+             h[1] = size.height;
+         }
+-        h[2] = constraint.getHeight() - h[1] - h[0];
+-        if (this.leftBlock != null) {
++ 		h[2] = ((constraint.getHeight()) - (h[1])) - (h[0]);
++		if (false) {
+             RectangleConstraint c3 = new RectangleConstraint(0.0,
+                     new Range(0.0, constraint.getWidth()),
+                     LengthConstraintType.RANGE, h[2], null,
++
+                     LengthConstraintType.FIXED);
+             Size2D size = this.leftBlock.arrange(g2, c3);
+             w[2] = size.width;

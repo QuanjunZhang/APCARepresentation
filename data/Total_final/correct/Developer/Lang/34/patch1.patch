@@ -1,0 +1,20 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_34/ToStringStyle/Lang_34_ToStringStyle_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_34/ToStringStyle/Lang_34_ToStringStyle_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -145,7 +145,7 @@
+      * @return Set the registry of objects being traversed
+      */
+     static Map<Object, Object> getRegistry() {
+-        return REGISTRY.get() != null ? REGISTRY.get() : Collections.<Object, Object>emptyMap();
++        return REGISTRY.get();
+     }
+ 
+     /**
+@@ -161,7 +161,7 @@
+      */
+     static boolean isRegistered(Object value) {
+         Map<Object, Object> m = getRegistry();
+-        return m.containsKey(value);
++        return m != null && m.containsKey(value);
+     }
+ 
+     /**

@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_16/NumberUtils/Lang_16_NumberUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_16/NumberUtils/Lang_16_NumberUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -455,7 +455,7 @@
+             // a wrong value.
+             return null;
+         }
+-        if (str.startsWith("0x") || str.startsWith("-0x")) {
++        if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {
+             return createInteger(str);
+         }   
+         char lastChar = str.charAt(str.length() - 1);

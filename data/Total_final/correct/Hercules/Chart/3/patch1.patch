@@ -1,0 +1,11 @@
+--- patch1-Chart-3-Hercules.buggys	2020-11-03 21:43:52.000000000 +0800
++++ patch1-Chart-3-Hercules.fixed	2020-11-03 21:47:52.000000000 +0800
+@@ -1117,7 +1117,7 @@
+         if (emptyRange) {
+             TimeSeries copy = (TimeSeries) super.clone();
+             copy.data = new java.util.ArrayList();
+-            return copy;
++            return addAndOrUpdate(copy);
+         }
+         else {
+             return createCopy(startIndex, endIndex);

@@ -1,0 +1,11 @@
+--- Frequency.java	2020-10-10 17:49:38.000000000 +0200
++++ Frequency copy.java	2020-11-05 23:36:14.000000000 +0100
+@@ -118,7 +118,7 @@
+      * @param v the value to add.
+      * @throws IllegalArgumentException if <code>v</code> is not comparable with previous entries
+      */
+-        Object obj = v;
++        Object obj =( Serializable ) v ;
+         if (v instanceof Integer) {
+            obj = Long.valueOf(((Integer) v).longValue());
+         }

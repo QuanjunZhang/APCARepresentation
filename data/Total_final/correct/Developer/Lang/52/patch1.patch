@@ -1,0 +1,13 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_52/StringEscapeUtils/Lang_52_StringEscapeUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_52/StringEscapeUtils/Lang_52_StringEscapeUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -233,6 +233,10 @@
+                         out.write('\\');
+                         out.write('\\');
+                         break;
++                    case '/':
++                        out.write('\\');
++                        out.write('/');
++                        break;
+                     default :
+                         out.write(ch);
+                         break;

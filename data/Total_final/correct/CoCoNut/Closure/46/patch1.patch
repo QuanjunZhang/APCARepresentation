@@ -1,0 +1,26 @@
+--- RecordType.java	2020-10-10 17:32:03.000000000 +0200
++++ RecordType copy.java	2020-11-05 21:33:02.000000000 +0100
+@@ -137,22 +137,7 @@
+         propertyNode);
+   }
+ 
+-  @Override
+-  public JSType getLeastSupertype(JSType that) {
+-    if (!that.isRecordType()) {
+-      return super.getLeastSupertype(that);
+-    }
+-    RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+-    for (String property : properties.keySet()) {
+-      if (that.toMaybeRecordType().hasProperty(property) &&
+-          that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(
+-              getPropertyType(property))) {
+-        builder.addProperty(property, getPropertyType(property),
+-            getPropertyNode(property));
+-      }
+-    }
+-    return builder.build();
+-  }
++  public JSType getLeastSupertype( JSType that ) { return super.getLeastSupertype( that ) ; }
+   JSType getGreatestSubtypeHelper(JSType that) {
+     if (that.isRecordType()) {
+       RecordType thatRecord = that.toMaybeRecordType();

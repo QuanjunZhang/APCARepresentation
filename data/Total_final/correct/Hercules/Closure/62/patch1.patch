@@ -1,0 +1,12 @@
+--- patch1-Closure-62-Hercules.buggy	2020-11-03 23:12:48.000000000 +0800
++++ patch1-Closure-62-Hercules.fixed	2020-11-07 23:59:33.000000000 +0800
+@@ -94,8 +94,7 @@
+       // padding equal to the excerpt and arrow at the end
+       // charno == sourceExpert.length() means something is missing
+       // at the end of the line
+-      if (excerpt.equals(LINE)
+-          && 0 <= charno && charno < sourceExcerpt.length()) {
++      if (((excerpt.equals(LINE)) && (0 <= charno)) && (charno <= (sourceExcerpt.length()))) {
+         for (int i = 0; i < charno; i++) {
+           char c = sourceExcerpt.charAt(i);
+           if (Character.isWhitespace(c)) {

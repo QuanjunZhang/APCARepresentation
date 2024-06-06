@@ -1,0 +1,16 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_28/NumericEntityUnescaper/Lang_28_NumericEntityUnescaper_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_28/NumericEntityUnescaper/Lang_28_NumericEntityUnescaper_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -60,7 +60,13 @@
+                 return 0;
+             }
+ 
++            if(entityValue > 0xFFFF) {
++                char[] chrs = Character.toChars(entityValue);
++                out.write(chrs[0]);
++                out.write(chrs[1]);
++            } else {
+                 out.write(entityValue);
++            }
+             return 2 + (end - start) + (isHex ? 1 : 0) + 1;
+         }
+         return 0;

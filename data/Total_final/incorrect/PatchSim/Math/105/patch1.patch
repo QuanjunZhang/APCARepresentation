@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch79/Math_105/SimpleRegression/Math_105_SimpleRegression_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch79/Math_105/SimpleRegression/Math_105_SimpleRegression_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -105,6 +105,7 @@
+     public void addData(double x, double y) {
+         if (n == 0) {
+             xbar = x;
++            if((org.apache.commons.math.stat.regression.SimpleRegression.this.xbar <= 1) || ((y < x) && (y < x)))
+             ybar = y;
+         } else {
+             double dx = x - xbar;

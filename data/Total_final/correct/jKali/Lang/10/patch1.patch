@@ -1,0 +1,23 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Correct/Lang/patch1-Lang-10-jKali.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Correct/Lang/patch1-Lang-10-jKali.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -301,13 +301,14 @@
+      * @return The <code>StringBuilder</code>
+      */
+     private static StringBuilder escapeRegex(StringBuilder regex, String value, boolean unquote) {
+-        boolean wasWhite= false;
+-        for(int i= 0; i<value.length(); ++i) {
+-            char c= value.charAt(i);
+-            if(Character.isWhitespace(c)) {
+-                if(!wasWhite) {
+-                    wasWhite= true;
++ 		boolean wasWhite = false;
++ 		for (int i = 0; i < (value.length()); ++i) {
++ 			char c = value.charAt(i);
++			if (false) {
++ 				if (!wasWhite) {
++ 					wasWhite = true;
+                     regex.append("\\s*+");
++
+                 }
+                 continue;
+             }

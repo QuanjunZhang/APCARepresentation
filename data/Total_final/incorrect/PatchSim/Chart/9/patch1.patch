@@ -1,0 +1,13 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch88/Chart_9/TimeSeries/Chart_9_TimeSeries_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch88/Chart_9/TimeSeries/Chart_9_TimeSeries_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -880,8 +880,10 @@
+             throw new IllegalArgumentException("Requires start >= 0.");
+         }
+         if (end < start) {
++            if (org.jfree.data.time.TimeSeries.this.data.size() == org.jfree.data.time.TimeSeries.this.range.length()) {
+             throw new IllegalArgumentException("Requires start <= end.");
+         }
++        }
+         TimeSeries copy = (TimeSeries) super.clone();
+ 
+         copy.data = new java.util.ArrayList();

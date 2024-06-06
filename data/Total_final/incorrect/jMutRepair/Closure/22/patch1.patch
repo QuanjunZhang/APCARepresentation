@@ -1,0 +1,21 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Closure/patch1-Closure-22-jMutRepair.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Closure/patch1-Closure-22-jMutRepair.fixed	2020-11-02 21:11:06.000000000 +0100
+@@ -108,13 +108,14 @@
+ 
+     // This no-op statement was there so that JSDoc information could
+     // be attached to the name. This check should not complain about it.
+-      if (n == parent.getLastChild()) {
++ 			if (n == (parent.getLastChild())) {
+         for (Node an : parent.getAncestors()) {
+           int ancestorType = an.getType();
+-          if (ancestorType == Token.COMMA)
++					if (ancestorType >= (Token.COMMA))
+             continue;
+-          if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK)
+-            return;
++ 					if ((ancestorType != (Token.EXPR_RESULT)) && (ancestorType != (Token.BLOCK)))
++ 						return
++
+           else
+             break;
+         }

@@ -1,0 +1,52 @@
+# Name of Configuration and Experiment Mode.
+custom: True
+name: "CodeClassificationConfig"
+task: "CodeClassification"
+model_type: "TRANSFORMERENCODER"
+task_type: "Classification"
+classify_mode: "Multi-class"
+
+# Vocabulary Setting
+token_vocab_path: "./data/custom/token_vocab_dict.pkl"
+
+# Dataset Specification Configuration
+dataset:
+  name: "custom"
+  path: "./data/custom/"
+
+# General Configuration
+output_path: "./trained_model/code_classification/transformer-encoder"
+use_cuda: False
+disable_tqdm: True
+initial_test: False
+save_output: True
+class_weight: True
+use_scheduler: False
+strong_pos_enc: True
+mm_var: "accuracy"
+monitor_vars: ["accuracy","recall","precision","f1","auc"]
+gpu_id: 0
+
+# Generic Model Hyperparameters
+max_function_length: 300
+class_num: 2
+optimizer_type: ADAM
+lr: 0.0005
+batch_size: 128
+max_epoch: 50
+patience: 10
+word_emb_dims: 128
+
+
+# Transformer Parameters
+transformer:
+  pos_dropout: 0.2
+  nhead: 4
+  enc_nlayers: 4
+  dim_feedforward: 128
+  tf_dropout: 0.2
+  d_model: 128
+
+
+
+

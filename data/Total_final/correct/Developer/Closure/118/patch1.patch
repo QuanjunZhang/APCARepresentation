@@ -1,0 +1,26 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_118/DisambiguateProperties/Closure_118_DisambiguateProperties_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_118/DisambiguateProperties/Closure_118_DisambiguateProperties_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -492,6 +492,9 @@
+           child != null;
+           child = child.getNext()) {
+         // Maybe STRING, GET, SET
++        if (child.isQuotedString()) {
++          continue;
++        }
+ 
+         // We should never see a mix of numbers and strings.
+         String name = child.getString();
+@@ -528,12 +531,11 @@
+         if (errors.size() > MAX_INVALDIATION_WARNINGS_PER_PROPERTY) {
+           return;
+         }
+-
+         log.err(" at " + error.sourceName + ":" + error.lineNumber)
+ 
+ //        errors.add(
+ //            t.toString() + " at " + error.sourceName + ":" + error.lineNumber);
+-//      }
++      }
+     }
+ 
+     /**

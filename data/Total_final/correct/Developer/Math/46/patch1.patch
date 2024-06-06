@@ -1,0 +1,20 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_46/Complex/Math_46_Complex_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_46/Complex/Math_46_Complex_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -257,7 +257,7 @@
+ 
+         if (divisor.isZero) {
+             // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
++            return NaN;
+         }
+ 
+         if (divisor.isInfinite() && !isInfinite()) {
+@@ -294,7 +294,7 @@
+         }
+         if (divisor == 0d) {
+             // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
++            return NaN;
+         }
+         if (Double.isInfinite(divisor)) {
+             return !isInfinite() ? ZERO : NaN;

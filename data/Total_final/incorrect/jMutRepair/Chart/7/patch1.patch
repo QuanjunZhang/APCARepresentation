@@ -1,0 +1,18 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Chart/patch1-Chart-7-jMutRepair.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Chart/patch1-Chart-7-jMutRepair.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -282,10 +282,11 @@
+             this.maxStartIndex = index;
+         }
+         
+-        if (this.minMiddleIndex >= 0) {
+-            long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
+-                .getTime();
+-            long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
++		if ((this.minMiddleIndex) == 0) {
++ 			long s = getDataItem(this.minMiddleIndex).getPeriod().getStart().getTime();
++ 
++ 			long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd().getTime();
++
+                 .getTime();
+             long minMiddle = s + (e - s) / 2;
+             if (middle < minMiddle) {

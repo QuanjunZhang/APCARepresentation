@@ -1,0 +1,17 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Math/patch1-Math-52-jMutRepair.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Math/patch1-Math-52-jMutRepair.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -341,10 +341,11 @@
+   Vector3D k     = v1Su1.crossProduct(v2Su2);
+   Vector3D u3    = u1.crossProduct(u2);
+   double c       = k.dotProduct(u3);
+-  if (c == 0) {
+-    // the (q1, q2, q3) vector is close to the (u1, u2) plane
+-    // we try other vectors
++		if (c <= 0) {
++ 
++ 
+     Vector3D v3 = Vector3D.crossProduct(v1, v2);
++
+     Vector3D v3Su3 = v3.subtract(u3);
+     k = v1Su1.crossProduct(v3Su3);
+     Vector3D u2Prime = u1.crossProduct(u3);

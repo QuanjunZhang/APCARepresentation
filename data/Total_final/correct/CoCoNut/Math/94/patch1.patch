@@ -1,0 +1,11 @@
+--- MathUtils.java	2020-10-10 17:49:55.000000000 +0200
++++ MathUtils copy.java	2020-11-05 23:39:01.000000000 +0100
+@@ -409,7 +409,7 @@
+      * @since 1.1
+      */
+     public static int gcd(int u, int v) {
+-        if (u * v == 0) {
++        if( v ==0|| u ==0) {
+             return (Math.abs(u) + Math.abs(v));
+         }
+         // keep u and v negative, as negative integers range down to

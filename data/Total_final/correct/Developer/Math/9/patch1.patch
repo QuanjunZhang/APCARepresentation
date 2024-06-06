@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_9/Line/Math_9_Line_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_9/Line/Math_9_Line_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -84,7 +84,8 @@
+      * @return a new instance, with reversed direction
+      */
+     public Line revert() {
+-        final Line reverted = new Line(zero, zero.subtract(direction));
++        final Line reverted = new Line(this);
++        reverted.direction = reverted.direction.negate();
+         return reverted;
+     }
+ 

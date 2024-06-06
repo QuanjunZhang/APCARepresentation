@@ -1,0 +1,21 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_48/TypedScopeCreator/Closure_48_TypedScopeCreator_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_48/TypedScopeCreator/Closure_48_TypedScopeCreator_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -1518,11 +1518,14 @@
+             || FunctionTypeBuilder.isFunctionTypeDeclaration(info));
+       }
+ 
+-      if (inferred) {
++      if (inferred && rhsValue != null && rhsValue.isFunction()) {
+         // Determining declaration for #2
+-        inferred = !(rhsValue != null &&
+-            rhsValue.isFunction() &&
+-            (info != null || !scope.isDeclared(qName, false)));
++        if (info != null) {
++          inferred = false;
++        } else if (!scope.isDeclared(qName, false) &&
++                   n.isUnscopedQualifiedName()) {
++          inferred = false;
++        }
+       }
+ 
+       if (!inferred) {

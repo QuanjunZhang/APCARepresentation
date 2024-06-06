@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_58/GaussianFitter/Math_58_GaussianFitter_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_58/GaussianFitter/Math_58_GaussianFitter_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -118,7 +118,7 @@
+      */
+     public double[] fit() {
+         final double[] guess = (new ParameterGuesser(getObservations())).guess();
+-        return fit(new Gaussian.Parametric(), guess);
++        return fit(guess);
+     }
+ 
+     /**

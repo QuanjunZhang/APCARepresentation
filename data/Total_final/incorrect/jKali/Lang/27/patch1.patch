@@ -1,0 +1,18 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Lang/patch1-Lang-27-jKali.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Lang/patch1-Lang-27-jKali.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -484,11 +484,12 @@
+                 dec = str.substring(decPos + 1);
+             }
+             mant = str.substring(0, decPos);
+-        } else {
+-            if (expPos > -1) {
++ 		}else {
++			if (false) {
+                 mant = str.substring(0, expPos);
+-            } else {
++ 			}else {
+                 mant = str;
++
+             }
+             dec = null;
+         }

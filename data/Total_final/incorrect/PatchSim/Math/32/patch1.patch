@@ -1,0 +1,22 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch34/Math_32/PolygonsSet/Math_32_PolygonsSet_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch34/Math_32/PolygonsSet/Math_32_PolygonsSet_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -133,14 +133,14 @@
+ 
+         if (v.length == 0) {
+             final BSPTree<Euclidean2D> tree = getTree(false);
+-            if ((Boolean) tree.getAttribute()) {
+-                // the instance covers the whole space
+-                setSize(Double.POSITIVE_INFINITY);
+-                setBarycenter(Vector2D.NaN);
++        if (false) {
++		setSize(java.lang.Double.POSITIVE_INFINITY);
++		setBarycenter(org.apache.commons.math3.geometry.euclidean.twod.Vector2D.NaN);
+             } else {
+                 setSize(0);
+-                setBarycenter(new Vector2D(0, 0));
++		setBarycenter(new org.apache.commons.math3.geometry.euclidean.twod.Vector2D(0 , 0));
+             }
++
+         } else if (v[0][0] == null) {
+             // there is at least one open-loop: the polygon is infinite
+             setSize(Double.POSITIVE_INFINITY);

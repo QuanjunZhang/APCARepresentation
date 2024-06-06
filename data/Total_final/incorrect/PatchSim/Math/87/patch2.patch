@@ -1,0 +1,14 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch175/Math_87/SimplexTableau/Math_87_SimplexTableau_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch175/Math_87/SimplexTableau/Math_87_SimplexTableau_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -158,9 +158,11 @@
+ 
+                     // x-
+                     if (!restrictToNonNegative) {
++                        if ((1) != (constraints.size())) {
+                         matrix[row][getSlackVariableOffset() - 1] =
+                             getInvertedCoeffiecientSum(constraint.getCoefficients());
+                     }
++                    }
+ 
+                     // RHS
+                     matrix[row][width - 1] = constraint.getValue();

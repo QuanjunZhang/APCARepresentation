@@ -1,0 +1,14 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_7/TimePeriodValues/Chart_7_TimePeriodValues_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_7/TimePeriodValues/Chart_7_TimePeriodValues_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -297,9 +297,9 @@
+         }
+         
+         if (this.maxMiddleIndex >= 0) {
+-            long s = getDataItem(this.minMiddleIndex).getPeriod().getStart()
++            long s = getDataItem(this.maxMiddleIndex).getPeriod().getStart()
+                 .getTime();
+-            long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd()
++            long e = getDataItem(this.maxMiddleIndex).getPeriod().getEnd()
+                 .getTime();
+             long maxMiddle = s + (e - s) / 2;
+             if (middle > maxMiddle) {

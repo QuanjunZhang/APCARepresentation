@@ -1,0 +1,26 @@
+--- a/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java
++++ b/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+@@ -294,7 +294,11 @@ public class ArchiveStreamFactory {
+             }
+         }
+         if (JAR.equalsIgnoreCase(archiverName)) {
++            if (entryEncoding != null) {
++                return new JarArchiveOutputStream(out, entryEncoding);
++            } else {
+                 return new JarArchiveOutputStream(out);
++            }
+         }
+         if (CPIO.equalsIgnoreCase(archiverName)) {
+             if (entryEncoding != null) {
+@@ -357,7 +361,11 @@ public class ArchiveStreamFactory {
+                     return new CpioArchiveInputStream(in);
+                 }
+             } else if (ArjArchiveInputStream.matches(signature, signatureLength)) {
++                if (entryEncoding != null) {
++                    return new ArjArchiveInputStream(in, entryEncoding);
++                } else {
+                     return new ArjArchiveInputStream(in);
++                }
+             } else if (SevenZFile.matches(signature, signatureLength)) {
+                 throw new StreamingNotSupportedException(SEVEN_Z);
+             }

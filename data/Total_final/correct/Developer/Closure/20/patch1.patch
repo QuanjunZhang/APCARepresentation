@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_20/PeepholeSubstituteAlternateSyntax/Closure_20_PeepholeSubstituteAlternateSyntax_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_20/PeepholeSubstituteAlternateSyntax/Closure_20_PeepholeSubstituteAlternateSyntax_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -217,7 +217,8 @@
+       // slightly different semantics than '' + (a). See
+       // http://code.google.com/p/closure-compiler/issues/detail?id=759
+       Node value = callTarget.getNext();
+-      if (value != null) {
++      if (value != null && value.getNext() == null &&
++          NodeUtil.isImmutableValue(value)) {
+         Node addition = IR.add(
+             IR.string("").srcref(callTarget),
+             value.detachFromParent());

@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch73/Math_87/SimplexTableau/Math_87_SimplexTableau_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch73/Math_87/SimplexTableau/Math_87_SimplexTableau_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -158,6 +158,7 @@
+ 
+                     // x-
+                     if (!restrictToNonNegative) {
++                        if((1) != (org.apache.commons.math.optimization.linear.SimplexTableau.this.numSlackVariables))
+                         matrix[row][getSlackVariableOffset() - 1] =
+                             getInvertedCoeffiecientSum(constraint.getCoefficients());
+                     }

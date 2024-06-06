@@ -1,0 +1,15 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Closure/patch1-Closure-46-jKali.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Closure/patch1-Closure-46-jKali.fixed	2020-11-02 21:45:49.000000000 +0100
+@@ -139,10 +139,11 @@
+ 
+   @Override
+   public JSType getLeastSupertype(JSType that) {
+-    if (!that.isRecordType()) {
++		if (true) {
+       return super.getLeastSupertype(that);
+     }
+     RecordTypeBuilder builder = new RecordTypeBuilder(registry);
++
+     for (String property : properties.keySet()) {
+       if (that.toMaybeRecordType().hasProperty(property) &&
+           that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(

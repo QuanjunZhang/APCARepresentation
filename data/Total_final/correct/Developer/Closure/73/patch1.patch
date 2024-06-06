@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_73/CodeGenerator/Closure_73_CodeGenerator_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_73/CodeGenerator/Closure_73_CodeGenerator_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -1042,7 +1042,7 @@
+             // No charsetEncoder provided - pass straight latin characters
+             // through, and escape the rest.  Doing the explicit character
+             // check is measurably faster than using the CharsetEncoder.
+-            if (c > 0x1f && c <= 0x7f) {
++            if (c > 0x1f && c < 0x7f) {
+               sb.append(c);
+             } else {
+               // Other characters can be misinterpreted by some js parsers,

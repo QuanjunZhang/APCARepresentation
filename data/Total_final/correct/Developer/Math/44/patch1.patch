@@ -1,0 +1,30 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_44/AbstractIntegrator/Math_44_AbstractIntegrator_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_44/AbstractIntegrator/Math_44_AbstractIntegrator_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -277,7 +277,6 @@
+ 
+             double previousT = interpolator.getGlobalPreviousTime();
+             final double currentT = interpolator.getGlobalCurrentTime();
+-            resetOccurred = false;
+ 
+             // initialize the events states if needed
+             if (! statesInitialized) {
+@@ -331,6 +330,9 @@
+                 if (isLastStep) {
+                     // the event asked to stop integration
+                     System.arraycopy(eventY, 0, y, 0, y.length);
++                    for (final EventState remaining : occuringEvents) {
++                        remaining.stepAccepted(eventT, eventY);
++                    }
+                     return eventT;
+                 }
+ 
+@@ -340,6 +342,9 @@
+                     System.arraycopy(eventY, 0, y, 0, y.length);
+                     computeDerivatives(eventT, y, yDot);
+                     resetOccurred = true;
++                    for (final EventState remaining : occuringEvents) {
++                        remaining.stepAccepted(eventT, eventY);
++                    }
+                     return eventT;
+                 }
+ 

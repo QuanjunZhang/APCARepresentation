@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_24/GrayPaintScale/Chart_24_GrayPaintScale_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_24/GrayPaintScale/Chart_24_GrayPaintScale_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -123,7 +123,7 @@
+     public Paint getPaint(double value) {
+         double v = Math.max(value, this.lowerBound);
+         v = Math.min(v, this.upperBound);
+-        int g = (int) ((value - this.lowerBound) / (this.upperBound 
++        int g = (int) ((v - this.lowerBound) / (this.upperBound 
+                 - this.lowerBound) * 255.0);
+         return new Color(g, g, g);
+     }

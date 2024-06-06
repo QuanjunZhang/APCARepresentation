@@ -1,0 +1,10 @@
+--- patch1-Chart-14-VFix.buggy	2020-11-01 19:10:57.000000000 +0800
++++ patch1-Chart-14-VFix.fixed	2020-11-01 19:11:18.000000000 +0800
+@@ -2163,6 +2163,7 @@
+             markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(
+                     index));
+         }
++        if(markers==null)   return false;
+         boolean removed = markers.remove(marker);
+         if (removed && notify) {
+             fireChangeEvent();

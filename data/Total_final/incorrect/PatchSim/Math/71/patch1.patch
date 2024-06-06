@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch53/Math_71/BrentSolver/Math_71_BrentSolver_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch53/Math_71/BrentSolver/Math_71_BrentSolver_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -331,7 +331,7 @@
+             // Compute new X1, Y1
+             if (Math.abs(delta) > tolerance) {
+                 x1 = x1 + delta;
+-            } else if (dx > 0.0) {
++            } else if ((dx > 0.0) || (org.apache.commons.math.analysis.solvers.BrentSolver.NON_BRACKETING_MESSAGE.length() < x1)) {
+                 x1 = x1 + 0.5 * tolerance;
+             } else if (dx <= 0.0) {
+                 x1 = x1 - 0.5 * tolerance;

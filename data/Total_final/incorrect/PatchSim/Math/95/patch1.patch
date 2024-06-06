@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch76/Math_95/FDistributionImpl/Math_95_FDistributionImpl_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch76/Math_95/FDistributionImpl/Math_95_FDistributionImpl_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -145,6 +145,8 @@
+         double d = getDenominatorDegreesOfFreedom();
+             // use mean
+             ret = d / (d - 2.0);
++        if (true)
++            return 0d;
+         return ret;
+     }
+     

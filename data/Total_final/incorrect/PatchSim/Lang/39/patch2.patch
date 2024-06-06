@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch193/Lang_39/StringUtils/Lang_39_StringUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch193/Lang_39/StringUtils/Lang_39_StringUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -3645,6 +3645,7 @@
+             if (noMoreMatchesForReplIndex[i] || searchList[i] == null || 
+                 searchList[i].length() == 0 || replacementList[i] == null) 
+             {
++  if (replaceIndex==0.0){return "cbc";}
+                 continue;
+             }
+             tempIndex = text.indexOf(searchList[i]);

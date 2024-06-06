@@ -1,0 +1,20 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Math/patch1-Math-50-jMutRepair.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Math/patch1-Math-50-jMutRepair.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -182,12 +182,13 @@
+                 case PEGASUS:
+                     f0 *= f1 / (f1 + fx);
+                     break;
+-                case REGULA_FALSI:
+-                    // Nothing.
+-                    if (x == x1) {
+-                        x0 = 0.5 * (x0 + x1 - FastMath.max(rtol * FastMath.abs(x1), atol));
++ 					case REGULA_FALSI :
++ 
++						if (x > x1) {
++ 							x0 = 0.5 * ((x0 + x1) - (FastMath.max((rtol * (FastMath.abs(x1))), atol)));
+                         f0 = computeObjectiveValue(x0);
+                     }
++
+                     break;
+                 default:
+                     // Should never happen.

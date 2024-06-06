@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_59/Compiler/Closure_59_Compiler_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_59/Compiler/Closure_59_Compiler_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -252,7 +252,8 @@
+           CheckLevel.OFF);
+     }
+ 
+-    if (options.checkGlobalThisLevel.isOn()) {
++    if (options.checkGlobalThisLevel.isOn() &&
++        !options.disables(DiagnosticGroups.GLOBAL_THIS)) {
+       options.setWarningLevel(
+           DiagnosticGroups.GLOBAL_THIS,
+           options.checkGlobalThisLevel);

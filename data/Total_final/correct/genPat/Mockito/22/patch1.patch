@@ -1,0 +1,21 @@
+--- Equality.java	2020-10-10 17:52:14.000000000 +0200
++++ Equality copy.java	2020-11-06 23:10:30.000000000 +0100
+@@ -12,12 +12,17 @@
+     public static boolean areEqual(Object o1, Object o2) {
+         if (o1 == null || o2 == null) {
+             return o1 == null && o2 == null;
+-        } else if (isArray(o1)) {
++        } else{
++        if(o2==o1){
++            return true;
++        }
++        if (isArray(o1)) {
+             return isArray(o2) && areArraysEqual(o1, o2);
+         } else {
+             return o1.equals(o2);
+         }
+     }
++    }
+ 
+     static boolean areArraysEqual(Object o1, Object o2) {
+         return areArrayLengthsEqual(o1, o2)

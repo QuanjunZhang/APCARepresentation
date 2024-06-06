@@ -1,0 +1,11 @@
+--- patch1-Chart-1-Hercules.buggys	2020-11-03 19:54:52.000000000 +0800
++++ patch1-Chart-1-Hercules.fixed	2020-11-03 19:56:48.000000000 +0800
+@@ -1794,7 +1794,7 @@
+         }
+         int index = this.plot.getIndexOf(this);
+         CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
++        if (!(dataset != null)) {
+             return result;
+         }
+         int seriesCount = dataset.getRowCount();

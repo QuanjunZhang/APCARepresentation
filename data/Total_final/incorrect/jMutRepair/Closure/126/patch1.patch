@@ -1,0 +1,15 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Closure/patch1-Closure-126-jMutRepair.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Closure/patch1-Closure-126-jMutRepair.fixed	2020-11-02 21:37:18.000000000 +0100
+@@ -138,10 +138,11 @@
+        * can cause problems if it changes the completion type of the finally
+        * block. See ECMA 262 Sections 8.9 & 12.14
+        */
+-      if (NodeUtil.hasFinally(n)) {
++			if (!(NodeUtil.hasFinally(n))) {
+         Node finallyBlock = n.getLastChild();
+         tryMinimizeExits(finallyBlock, exitType, labelName);
+       }
++
+     }
+ 
+     // Just a 'label'.

@@ -1,0 +1,18 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_40/StringUtils/Lang_40_StringUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_40/StringUtils/Lang_40_StringUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -1045,7 +1045,14 @@
+         if (str == null || searchStr == null) {
+             return false;
+         }
+-        return contains(str.toUpperCase(), searchStr.toUpperCase());
++        int len = searchStr.length();
++        int max = str.length() - len;
++        for (int i = 0; i <= max; i++) {
++            if (str.regionMatches(true, i, searchStr, 0, len)) {
++                return true;
++            }
++        }
++        return false;
+     }
+ 
+     // IndexOfAny chars

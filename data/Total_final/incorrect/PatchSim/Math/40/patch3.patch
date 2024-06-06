@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch37/Math_40/BracketingNthOrderBrentSolver/Math_40_BracketingNthOrderBrentSolver_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch37/Math_40/BracketingNthOrderBrentSolver/Math_40_BracketingNthOrderBrentSolver_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -232,6 +232,7 @@
+             double targetY;
+             if (agingA >= MAXIMAL_AGING) {
+                 // we keep updating the high bracket, try to compensate this
++                signChangeIndex++;
+                 targetY = -REDUCTION_FACTOR * yB;
+             } else if (agingB >= MAXIMAL_AGING) {
+                 // we keep updating the low bracket, try to compensate this

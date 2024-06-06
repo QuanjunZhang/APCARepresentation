@@ -1,0 +1,11 @@
+--- patch1-Closure-46-Hercules.buggy	2020-11-06 21:09:15.000000000 +0800
++++ patch1-Closure-46-Hercules.fixed	2020-11-06 21:09:53.000000000 +0800
+@@ -139,7 +139,7 @@
+ 
+   @Override
+   public JSType getLeastSupertype(JSType that) {
+-    if (!that.isRecordType()) {
++    if (!(that.isRegexpType())) {
+       return super.getLeastSupertype(that);
+     }
+     RecordTypeBuilder builder = new RecordTypeBuilder(registry);

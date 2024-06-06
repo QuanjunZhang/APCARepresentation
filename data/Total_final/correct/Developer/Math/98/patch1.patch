@@ -1,0 +1,22 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_98/BigMatrixImpl/Math_98_BigMatrixImpl_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_98/BigMatrixImpl/Math_98_BigMatrixImpl_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -988,7 +988,7 @@
+         }
+         final int nRows = this.getRowDimension();
+         final int nCols = this.getColumnDimension();
+-        final BigDecimal[] out = new BigDecimal[v.length];
++        final BigDecimal[] out = new BigDecimal[nRows];
+         for (int row = 0; row < nRows; row++) {
+             BigDecimal sum = ZERO;
+             for (int i = 0; i < nCols; i++) {
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_98/RealMatrixImpl/Math_98_RealMatrixImpl_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_98/RealMatrixImpl/Math_98_RealMatrixImpl_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -776,7 +776,7 @@
+         if (v.length != nCols) {
+             throw new IllegalArgumentException("vector has wrong length");
+         }
+-        final double[] out = new double[v.length];
++        final double[] out = new double[nRows];
+         for (int row = 0; row < nRows; row++) {
+             final double[] dataRow = data[row];
+             double sum = 0;

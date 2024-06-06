@@ -1,0 +1,22 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_86/CholeskyDecompositionImpl/Math_86_CholeskyDecompositionImpl_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_86/CholeskyDecompositionImpl/Math_86_CholeskyDecompositionImpl_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -111,9 +111,6 @@
+ 
+             final double[] lI = lTData[i];
+ 
+-            if (lTData[i][i] < absolutePositivityThreshold) {
+-                throw new NotPositiveDefiniteMatrixException();
+-            }
+             // check off-diagonal elements (and reset them to 0)
+             for (int j = i + 1; j < order; ++j) {
+                 final double[] lJ = lTData[j];
+@@ -134,6 +131,9 @@
+             final double[] ltI = lTData[i];
+ 
+             // check diagonal element
++            if (ltI[i] < absolutePositivityThreshold) {
++                throw new NotPositiveDefiniteMatrixException();
++            }
+ 
+             ltI[i] = Math.sqrt(ltI[i]);
+             final double inverse = 1.0 / ltI[i];

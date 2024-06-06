@@ -1,0 +1,38 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_47/Complex/Math_47_Complex_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_47/Complex/Math_47_Complex_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -79,6 +79,7 @@
+     /** Record whether this complex number is infinite. */
+     private final transient boolean isInfinite;
+     /** Record whether this complex number is zero. */
++    private final transient boolean isZero;
+ 
+     /**
+      * Create a complex number given only the real part.
+@@ -102,6 +103,7 @@
+         isNaN = Double.isNaN(real) || Double.isNaN(imaginary);
+         isInfinite = !isNaN &&
+             (Double.isInfinite(real) || Double.isInfinite(imaginary));
++        isZero = real == 0 && imaginary == 0;
+     }
+ 
+     /**
+@@ -253,8 +255,8 @@
+             return NaN;
+         }
+ 
+-        if (divisor.getReal() == 0.0 && divisor.getImaginary() == 0.0) {
+-            return NaN;
++        if (divisor.isZero) {
++            return isZero ? NaN : INF;
+         }
+ 
+         if (divisor.isInfinite() && !isInfinite()) {
+@@ -290,7 +292,7 @@
+             return NaN;
+         }
+         if (divisor == 0d) {
+-            return NaN;
++            return isZero ? NaN : INF;
+         }
+         if (Double.isInfinite(divisor)) {
+             return !isInfinite() ? ZERO : NaN;

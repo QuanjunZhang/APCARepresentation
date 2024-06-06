@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_133/JsDocInfoParser/Closure_133_JsDocInfoParser_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_133/JsDocInfoParser/Closure_133_JsDocInfoParser_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -2398,6 +2398,7 @@
+    */
+   private String getRemainingJSDocLine() {
+     String result = stream.getRemainingJSDocLine();
++    unreadToken = NO_UNREAD_TOKEN;
+     return result;
+   }
+ 

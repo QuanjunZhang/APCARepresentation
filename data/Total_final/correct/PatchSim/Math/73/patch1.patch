@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/correct/Patch54/Math_73/BrentSolver/Math_73_BrentSolver_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/correct/Patch54/Math_73/BrentSolver/Math_73_BrentSolver_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -135,8 +135,7 @@
+ 
+ 
+         // full Brent algorithm starting with provided initial guess
+-        return solve(f, min, yMin, max, yMax, initial, yInitial);
+-
++        return solve(f, min, max);
+     }
+ 
+     /**

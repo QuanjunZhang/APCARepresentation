@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/correct/Patch21/Lang_44/NumberUtils/Lang_44_NumberUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/correct/Patch21/Lang_44/NumberUtils/Lang_44_NumberUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -190,6 +190,7 @@
+             switch (lastChar) {
+                 case 'l' :
+                 case 'L' :
++                    if((val.length()) != (1))
+                     if (dec == null
+                         && exp == null
+                         && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {

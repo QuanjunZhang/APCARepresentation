@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_92/ProcessClosurePrimitives/Closure_92_ProcessClosurePrimitives_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_92/ProcessClosurePrimitives/Closure_92_ProcessClosurePrimitives_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -786,7 +786,7 @@
+         } else {
+           // In this case, the name was implicitly provided by two independent
+           // modules. We need to move this code up to a common module.
+-          int indexOfDot = namespace.indexOf('.');
++          int indexOfDot = namespace.lastIndexOf('.');
+           if (indexOfDot == -1) {
+             // Any old place is fine.
+             compiler.getNodeForCodeInsertion(minimumModule)

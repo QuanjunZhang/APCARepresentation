@@ -1,0 +1,16 @@
+--- /src/main/java/org/apache/commons/lang3/math/NumberUtils.java
++++ /src/main/java/org/apache/commons/lang3/math/NumberUtils.java
+@@ -1409,6 +1409,7 @@
+             }
+             if (chars[i] == 'l'
+                 || chars[i] == 'L') {
++	if (hasDecPoint==true){return false;}
+                 // not allowing L with an exponent or decimal point
+                 return foundDigit && !hasExp;
+             }
+@@ -1420,4 +1420,4 @@
+         return !allowSigns && foundDigit;
+     }
+     
+-}
++}

@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_43/ExtendedMessageFormat/Lang_43_ExtendedMessageFormat_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_43/ExtendedMessageFormat/Lang_43_ExtendedMessageFormat_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -419,6 +419,7 @@
+         int start = pos.getIndex();
+         char[] c = pattern.toCharArray();
+         if (escapingOn && c[start] == QUOTE) {
++            next(pos);
+             return appendTo == null ? null : appendTo.append(QUOTE);
+         }
+         int lastHold = start;

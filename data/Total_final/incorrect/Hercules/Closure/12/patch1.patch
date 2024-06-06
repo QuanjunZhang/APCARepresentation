@@ -1,0 +1,11 @@
+--- patch1-Closure-12-Hercules.buggy	2020-11-06 21:06:45.000000000 +0800
++++ patch1-Closure-12-Hercules.fixed	2020-11-06 21:07:58.000000000 +0800
+@@ -923,7 +923,7 @@
+         return false;
+     }
+     for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {
+-      if (!ControlFlowGraph.isEnteringNewCfgNode(c) && mayThrowException(c)) {
++      if ((!(ControlFlowGraph.isEnteringNewCfgNode(c)) || ((ControlFlowGraph.isEnteringNewCfgNode(n)))) && (apply(c))) {
+         return true;
+       }
+     }

@@ -1,0 +1,19 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Chart/patch1-Chart-25-jMutRepair.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Chart/patch1-Chart-25-jMutRepair.fixed	2020-11-02 21:35:48.000000000 +0100
+@@ -105,12 +105,13 @@
+      */
+     public Number getMeanValue(int row, int column) {
+         Number result = null;
+-        MeanAndStandardDeviation masd 
+-            = (MeanAndStandardDeviation) this.data.getObject(row, column);
+-        if (masd != null) {
++ 		MeanAndStandardDeviation masd = 
++ 		((MeanAndStandardDeviation) (this.data.getObject(row, column)));
++		if (masd == null) {
+             result = masd.getMean();
+         }
+         return result;
++
+     }
+ 
+     /**

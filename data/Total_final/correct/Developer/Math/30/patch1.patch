@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_30/MannWhitneyUTest/Math_30_MannWhitneyUTest_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_30/MannWhitneyUTest/Math_30_MannWhitneyUTest_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -170,7 +170,7 @@
+                                              final int n2)
+         throws ConvergenceException, MaxCountExceededException {
+ 
+-        final int n1n2prod = n1 * n2;
++        final double n1n2prod = n1 * n2;
+ 
+         // http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U#Normal_approximation
+         final double EU = n1n2prod / 2.0;

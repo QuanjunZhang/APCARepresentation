@@ -1,0 +1,11 @@
+--- patch1-Lang-45-Hercules.buggy	2020-11-06 21:32:36.000000000 +0800
++++ patch1-Lang-45-Hercules.fixed	2020-11-06 21:36:02.000000000 +0800
+@@ -635,7 +635,7 @@
+                 result.append(StringUtils.defaultString(appendToEnd));
+             }
+         } else if (index > upper) {
+-            result.append(str.substring(0, upper));
++            result.append(StringUtils.substring(str, 0, upper))
+             result.append(StringUtils.defaultString(appendToEnd));
+         } else {
+             result.append(str.substring(0, index));

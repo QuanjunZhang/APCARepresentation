@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_32/PolygonsSet/Math_32_PolygonsSet_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_32/PolygonsSet/Math_32_PolygonsSet_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -133,7 +133,7 @@
+ 
+         if (v.length == 0) {
+             final BSPTree<Euclidean2D> tree = getTree(false);
+-            if ((Boolean) tree.getAttribute()) {
++            if (tree.getCut() == null && (Boolean) tree.getAttribute()) {
+                 // the instance covers the whole space
+                 setSize(Double.POSITIVE_INFINITY);
+                 setBarycenter(Vector2D.NaN);

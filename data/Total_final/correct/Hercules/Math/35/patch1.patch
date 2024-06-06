@@ -1,0 +1,16 @@
+--- patch1-Math-35-Hercules.buggy	2020-11-06 18:51:05.000000000 +0800
++++ patch1-Math-35-Hercules.fixed	2020-11-06 18:54:17.000000000 +0800
+@@ -48,5 +48,6 @@
+                                    final int populationLimit,
+                                    final double elitismRate) {
+         super(chromosomes, populationLimit);
++        setElitismRate(elitismRate);
+         this.elitismRate = elitismRate;
+     }
+@@ -62,5 +62,6 @@
+      */
+     public ElitisticListPopulation(final int populationLimit, final double elitismRate) {
+         super(populationLimit);
++        setElitismRate(elitismRate);
+         this.elitismRate = elitismRate;
+     }

@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_36/InlineVariables/Closure_36_InlineVariables_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_36/InlineVariables/Closure_36_InlineVariables_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -572,6 +572,9 @@
+ 
+           // issue 668: Don't inline singleton getter methods
+           // calls as this confused class removing logic.
++          if (convention.getSingletonGetterClassName(callNode) != null) {
++            return false;
++          }
+         }
+       }
+ 

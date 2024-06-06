@@ -1,0 +1,11 @@
+--- patch1-Math-75-Hercules.buggy	2020-11-06 19:56:43.000000000 +0800
++++ patch1-Math-75-Hercules.fixed	2020-11-06 19:57:39.000000000 +0800
+@@ -300,7 +300,7 @@
+      */
+     @Deprecated
+     public double getPct(Object v) {
+-        return getCumPct((Comparable<?>) v);
++        return getPct(((java.lang.Comparable<?>)(v)));
+     }
+ 
+     /**

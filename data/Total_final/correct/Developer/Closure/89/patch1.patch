@@ -1,0 +1,23 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_89/CollapseProperties/Closure_89_CollapseProperties_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_89/CollapseProperties/Closure_89_CollapseProperties_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -481,6 +481,9 @@
+     Node greatGramps = gramps.getParent();
+     Node greatGreatGramps = greatGramps.getParent();
+ 
++    if (rvalue != null && rvalue.getType() == Token.FUNCTION) {
++      checkForHosedThisReferences(rvalue, refName.docInfo, refName);
++    }
+ 
+     // Create the new alias node.
+     Node nameNode = NodeUtil.newName(
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_89/GlobalNamespace/Closure_89_GlobalNamespace_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_89/GlobalNamespace/Closure_89_GlobalNamespace_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -917,7 +917,7 @@
+       }
+ 
+       // If this is aliased, then its properties can't be collapsed either.
+-      if (type != Type.FUNCTION && aliasingGets > 0) {
++      if (aliasingGets > 0) {
+         return false;
+       }
+ 

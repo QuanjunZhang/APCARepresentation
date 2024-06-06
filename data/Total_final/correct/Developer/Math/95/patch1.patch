@@ -1,0 +1,16 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_95/FDistributionImpl/Math_95_FDistributionImpl_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_95/FDistributionImpl/Math_95_FDistributionImpl_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -141,10 +141,12 @@
+      * @return initial domain value
+      */
+     protected double getInitialDomain(double p) {
+-        double ret;
++        double ret = 1.0;
+         double d = getDenominatorDegreesOfFreedom();
++        if (d > 2.0) {
+             // use mean
+             ret = d / (d - 2.0);
++        }
+         return ret;
+     }
+     

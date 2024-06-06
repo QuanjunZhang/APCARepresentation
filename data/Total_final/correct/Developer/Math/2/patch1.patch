@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_2/HypergeometricDistribution/Math_2_HypergeometricDistribution_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_2/HypergeometricDistribution/Math_2_HypergeometricDistribution_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -265,7 +265,7 @@
+      * size {@code n}, the mean is {@code n * m / N}.
+      */
+     public double getNumericalMean() {
+-        return (double) (getSampleSize() * getNumberOfSuccesses()) / (double) getPopulationSize();
++        return getSampleSize() * (getNumberOfSuccesses() / (double) getPopulationSize());
+     }
+ 
+     /**

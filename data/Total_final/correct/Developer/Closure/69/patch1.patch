@@ -1,0 +1,16 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_69/TypeCheck/Closure_69_TypeCheck_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_69/TypeCheck/Closure_69_TypeCheck_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -1577,6 +1577,13 @@
+ 
+       // Functions with explcit 'this' types must be called in a GETPROP
+       // or GETELEM.
++      if (functionType.isOrdinaryFunction() &&
++          !functionType.getTypeOfThis().isUnknownType() &&
++          !functionType.getTypeOfThis().isNativeObjectType() &&
++          !(child.getType() == Token.GETELEM ||
++            child.getType() == Token.GETPROP)) {
++        report(t, n, EXPECTED_THIS_TYPE, functionType.toString());
++      }
+ 
+       visitParameterList(t, n, functionType);
+       ensureTyped(t, n, functionType.getReturnType());

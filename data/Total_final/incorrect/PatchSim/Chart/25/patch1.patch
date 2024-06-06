@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch16/Chart_25/StatisticalBarRenderer/Chart_25_StatisticalBarRenderer_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch16/Chart_25/StatisticalBarRenderer/Chart_25_StatisticalBarRenderer_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -197,6 +197,8 @@
+                          int pass) {
+ 
+         // defensive check
++        if (true)
++            return ;
+         if (!(data instanceof StatisticalCategoryDataset)) {
+             throw new IllegalArgumentException(
+                 "Requires StatisticalCategoryDataset.");

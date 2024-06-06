@@ -1,0 +1,61 @@
+# Name of Configuration and Experiment Mode.
+custom: True
+name: "CodeClassificationConfig"
+task: "CodeClassification"
+model_type: "GAT"
+task_type: "Classification"
+classify_mode: "Binary"
+
+# Vocabulary Setting
+token_vocab_path: "./data/graph/ast/dict/token_vocab_dict.pkl"
+node_vocab_path: "./data/graph/ast/dict/node_vocab_dict.pkl"
+
+# Dataset Specification Configuration
+dataset:
+  name: "custom"
+  path: "./data/graph/ast/context-preserved"
+
+# General Configuration
+output_path: "./trained_model/code_classification/gat"
+use_cuda: True
+disable_tqdm: True
+class_weight: True
+initial_test: False
+save_output: True
+use_scheduler: True
+mm_var: "accuracy"
+monitor_vars: ["accuracy","recall","precision","f1","auc"]
+gpu_id: 1
+
+# General Configuration
+max_code_token_len: 20
+class_num: 2
+optimizer_type: ADAM
+lr: 0.001
+batch_size: 128
+max_epoch: 500
+patience: 100
+word_emb_dims: 128
+dropout: 0.2
+self_loop: False
+reverse_edge: False
+
+use_edge_type: "ast"
+
+# Node Embedding Layer
+node_emb_layer:
+  mode: "LSTMEmbedNode" # Average/LSTM/MLP
+  dims: 128
+  layers: 1
+  use_nfeature: "textual" # structure or textual or both
+
+# GAT Parameters
+gat:
+  in_dim: 128
+  out_dim: 128
+  layers: 2
+  nhead: 8
+  dropout: 0.2
+
+
+

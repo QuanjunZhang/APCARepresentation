@@ -1,0 +1,13 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_132/PeepholeSubstituteAlternateSyntax/Closure_132_PeepholeSubstituteAlternateSyntax_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_132/PeepholeSubstituteAlternateSyntax/Closure_132_PeepholeSubstituteAlternateSyntax_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -779,7 +779,9 @@
+               // evaluates LHS before cond]
+               // NOTE - there are some circumstances where we can
+               // proceed even if there are side effects...
+-              !mayEffectMutableState(lhs)) {
++              !mayEffectMutableState(lhs) &&
++              (!mayHaveSideEffects(cond) ||
++                  (thenOp.isAssign() && thenOp.getFirstChild().isName()))) {
+ 
+             n.removeChild(cond);
+             Node assignName = thenOp.removeFirstChild();

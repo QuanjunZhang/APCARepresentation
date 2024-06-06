@@ -1,0 +1,15 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Chart/patch1-Chart-1-jKali.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Chart/patch1-Chart-1-jKali.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -1794,10 +1794,11 @@
+         }
+         int index = this.plot.getIndexOf(this);
+         CategoryDataset dataset = this.plot.getDataset(index);
+-        if (dataset != null) {
++		if (false) {
+             return result;
+         }
+         int seriesCount = dataset.getRowCount();
++
+         if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {
+             for (int i = 0; i < seriesCount; i++) {
+                 if (isSeriesVisibleInLegend(i)) {

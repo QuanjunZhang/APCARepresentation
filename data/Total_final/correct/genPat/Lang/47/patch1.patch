@@ -1,0 +1,12 @@
+--- StrBuilder.java	2020-10-10 17:41:32.000000000 +0200
++++ StrBuilder copy.java	2020-11-06 20:52:20.000000000 +0100
+@@ -1183,6 +1183,9 @@
+         if (width > 0) {
+             ensureCapacity(size + width);
+             String str = (obj == null ? getNullText() : obj.toString());
++            if(str==null){
++                str="";
++            }
+             int strLen = str.length();
+             if (strLen >= width) {
+                 str.getChars(strLen - width, strLen, buffer, size);

@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_10/StandardToolTipTagFragmentGenerator/Chart_10_StandardToolTipTagFragmentGenerator_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_10/StandardToolTipTagFragmentGenerator/Chart_10_StandardToolTipTagFragmentGenerator_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -62,7 +62,7 @@
+      * @return The formatted HTML area tag attribute(s).
+      */
+     public String generateToolTipFragment(String toolTipText) {
+-        return " title=\"" + toolTipText
++        return " title=\"" + ImageMapUtilities.htmlEscape(toolTipText) 
+             + "\" alt=\"\"";
+     }
+ 

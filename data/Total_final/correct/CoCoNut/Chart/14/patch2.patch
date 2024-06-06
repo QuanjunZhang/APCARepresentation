@@ -1,0 +1,20 @@
+--- XYPlot.java	2020-10-11 16:12:40.000000000 +0200
++++ XYPlot copy.java	2020-11-05 21:10:12.000000000 +0100
+@@ -2290,7 +2290,7 @@
+             markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(
+                     index));
+         }
+-        boolean removed = markers.remove(marker);
++        boolean removed = markers != null && markers.remove( marker ) ;
+         if (removed && notify) {
+             fireChangeEvent();
+         }
+@@ -2526,7 +2526,7 @@
+             markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(
+                     index));
+         }
+-        boolean removed = markers.remove(marker);
++        boolean removed = markers != null && markers.remove( marker ) ;
+         if (removed && notify) {
+             fireChangeEvent();
+         }

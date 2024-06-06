@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_9/TimeSeries/Chart_9_TimeSeries_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_9/TimeSeries/Chart_9_TimeSeries_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -941,7 +941,7 @@
+             endIndex = -(endIndex + 1); // this is first item AFTER end period
+             endIndex = endIndex - 1;    // so this is last item BEFORE end
+         }
+-        if (endIndex < 0) {
++        if ((endIndex < 0)  || (endIndex < startIndex)) {
+             emptyRange = true;
+         }
+         if (emptyRange) {

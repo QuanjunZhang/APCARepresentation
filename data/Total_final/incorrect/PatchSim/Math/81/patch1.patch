@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch62/Math_81/EigenDecompositionImpl/Math_81_EigenDecompositionImpl_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch62/Math_81/EigenDecompositionImpl/Math_81_EigenDecompositionImpl_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -1477,7 +1477,6 @@
+                     int np;
+                     if (dMin == dN) {
+                         gam = dN;
+-                        a2 = 0.0;
+                         if (work[nn - 5]  >  work[nn - 7]) {
+                             return;
+                         }

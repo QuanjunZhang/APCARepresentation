@@ -1,0 +1,7 @@
++++ 
+@@ -174,8 +174,8 @@
+       // defer argument checking...                                                                                                                                                   
+
+-        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());
++        this(time, zone, Locale.getDefault());
+    }

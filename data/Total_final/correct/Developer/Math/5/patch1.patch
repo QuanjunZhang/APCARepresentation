@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_5/Complex/Math_5_Complex_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_5/Complex/Math_5_Complex_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -302,7 +302,7 @@
+         }
+ 
+         if (real == 0.0 && imaginary == 0.0) {
+-            return NaN;
++            return INF;
+         }
+ 
+         if (isInfinite) {

@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_58/NumberUtils/Lang_58_NumberUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_58/NumberUtils/Lang_58_NumberUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -451,8 +451,7 @@
+                 case 'L' :
+                     if (dec == null
+                         && exp == null
+-                        && isDigits(numeric.substring(1))
+-                        && (numeric.charAt(0) == '-' || Character.isDigit(numeric.charAt(0)))) {
++                        && (numeric.charAt(0) == '-' && isDigits(numeric.substring(1)) || isDigits(numeric))) {
+                         try {
+                             return createLong(numeric);
+                         } catch (NumberFormatException nfe) {

@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_130/CollapseProperties/Closure_130_CollapseProperties_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_130/CollapseProperties/Closure_130_CollapseProperties_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -169,7 +169,7 @@
+         continue;
+       }
+ 
+-      if (name.globalSets == 1 && name.localSets == 0 &&
++      if (!name.inExterns && name.globalSets == 1 && name.localSets == 0 &&
+           name.aliasingGets > 0) {
+         // {@code name} meets condition (b). Find all of its local aliases
+         // and try to inline them.

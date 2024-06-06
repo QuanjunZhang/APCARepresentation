@@ -1,0 +1,37 @@
+# Name of Configuration and Experiment Mode.
+custom: true
+name: "CodeClassificationConfig"
+task: "CodeClassification"
+model_type: "XGBoost_Feature"
+task_type: "Classification"
+classify_mode: "Binary"
+
+# Vocabulary Setting
+node_vocab_path: "./data/feature/dict/node_vocab_dict.pkl"
+feature: ["code","context","pattern"]
+
+# Dataset Specification Configuration
+dataset:
+  name: "custom"
+  path: "./data/feature/"
+
+# Setup Configuration
+output_path: "./trained_model/code_classification/tfidf"
+use_cuda: True
+disable_tqdm: True
+initial_test: False
+save_output: False
+
+
+# Generic Model Hyperparameters
+max_function_length: 150
+xgboost_objective: 'multi:softprob'
+class_num: 2
+round_num: 40
+tree_depth: 32
+vuln_line_pred: False
+class_weight: False
+mm_var: "accuracy"
+monitor_vars: ["accuracy","recall","precision","f1","auc"]
+gpu_id: 0
+

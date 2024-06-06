@@ -1,0 +1,35 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_108/ScopedAliases/Closure_108_ScopedAliases_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_108/ScopedAliases/Closure_108_ScopedAliases_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -256,6 +256,7 @@
+     private final Map<String, Var> aliases = Maps.newHashMap();
+ 
+     // Also temporary and cleared for each scope.
++    private final Set<Node> injectedDecls = Sets.newHashSet();
+ 
+     // Suppose you create an alias.
+     // var x = goog.x;
+@@ -313,6 +314,7 @@
+ 
+       if (t.getScopeDepth() == 2) {
+         renameNamespaceShadows(t);
++        injectedDecls.clear();
+         aliases.clear();
+         forbiddenLocals.clear();
+         transformation = null;
+@@ -429,6 +431,7 @@
+             } else {
+               grandparent.addChildBefore(newDecl, varNode);
+             }
++            injectedDecls.add(newDecl.getFirstChild());
+           }
+ 
+           // Rewrite "var name = EXPR;" to "var name = $jscomp.scope.name;"
+@@ -578,7 +581,7 @@
+         // When we inject declarations, we duplicate jsdoc. Make sure
+         // we only process that jsdoc once.
+         JSDocInfo info = n.getJSDocInfo();
+-        if (info != null) {
++        if (info != null && !injectedDecls.contains(n)) {
+           for (Node node : info.getTypeNodes()) {
+             fixTypeNode(node);
+           }

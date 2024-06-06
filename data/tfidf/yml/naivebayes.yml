@@ -1,0 +1,31 @@
+# Name of Configuration and Experiment Mode.
+custom: true
+name: "CodeClassificationConfig"
+task: "CodeClassification"
+model_type: "NaiveBayes"
+task_type: "Classification"
+classify_mode: "Binary"
+
+# Vocabulary Setting
+token_vocab_path: "./data/tfidf/dict/token_vocab_dict.pkl"
+
+# Dataset Specification Configuration
+dataset:
+  name: "custom"
+  path: "./data/tfidf/"
+
+# Setup Configuration
+output_path: "./trained_model/code_classification/tfidf"
+use_cuda: True
+disable_tqdm: True
+initial_test: False
+save_output: False
+class_weight: True
+
+# Generic Model Hyperparameters
+max_function_length: 150
+class_num: 2
+vuln_line_pred: False
+mm_var: "accuracy"
+monitor_vars: ["accuracy","recall","precision","f1","auc"]
+gpu_id: 1

@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch32/Math_28/SimplexSolver/Math_28_SimplexSolver_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch32/Math_28/SimplexSolver/Math_28_SimplexSolver_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -121,7 +121,6 @@
+                         int column = i + tableau.getArtificialVariableOffset();
+                         final double entry = tableau.getEntry(row, column);
+                         if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column))) {
+-                            return row;
+                         }
+                     }
+                 }

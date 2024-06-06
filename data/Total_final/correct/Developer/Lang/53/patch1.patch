@@ -1,0 +1,23 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_53/DateUtils/Lang_53_DateUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_53/DateUtils/Lang_53_DateUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -640,18 +640,18 @@
+         int millisecs = val.get(Calendar.MILLISECOND);
+         if (!round || millisecs < 500) {
+             time = time - millisecs;
++        }
+         if (field == Calendar.SECOND) {
+             done = true;
+-            }
+         }
+ 
+         // truncate seconds
+         int seconds = val.get(Calendar.SECOND);
+         if (!done && (!round || seconds < 30)) {
+             time = time - (seconds * 1000L);
++        }
+         if (field == Calendar.MINUTE) {
+             done = true;
+-            }
+         }
+ 
+         // truncate minutes

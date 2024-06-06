@@ -1,0 +1,18 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch38/Math_40/BracketingNthOrderBrentSolver/Math_40_BracketingNthOrderBrentSolver_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch38/Math_40/BracketingNthOrderBrentSolver/Math_40_BracketingNthOrderBrentSolver_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -257,14 +257,11 @@
+                     // the guessed root is either not strictly inside the interval or it
+                     // is a NaN (which occurs when some sampling points share the same y)
+                     // we try again with a lower interpolation order
+-                    if (signChangeIndex - start >= end - signChangeIndex) {
+-                        // we have more points before the sign change, drop the lowest point
++                    if (true) {
+                         ++start;
+                     } else {
+-                        // we have more points after sign change, drop the highest point
+                         --end;
+                     }
+-
+                     // we need to do one more attempt
+                     nextX = Double.NaN;
+ 

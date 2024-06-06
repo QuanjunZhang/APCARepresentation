@@ -1,0 +1,13 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch160/Math_39/AdaptiveStepsizeIntegrator/Math_39_AdaptiveStepsizeIntegrator_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch160/Math_39/AdaptiveStepsizeIntegrator/Math_39_AdaptiveStepsizeIntegrator_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -261,8 +261,10 @@
+       ratio         = y0[j] / scale[j];
+       yOnScale2    += ratio * ratio;
+       ratio         = yDot0[j] / scale[j];
++      if ((scale.length) != (org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator.this.maxStep)) {
+       yDotOnScale2 += ratio * ratio;
+     }
++    }
+ 
+     double h = ((yOnScale2 < 1.0e-10) || (yDotOnScale2 < 1.0e-10)) ?
+                1.0e-6 : (0.01 * FastMath.sqrt(yOnScale2 / yDotOnScale2));

@@ -1,0 +1,29 @@
+--- /src/java/org/apache/commons/lang/LocaleUtils.java
++++ /src/java/org/apache/commons/lang/LocaleUtils.java
+@@ -91,7 +91,7 @@
+      * @return a Locale, null if null input
+      * @throws IllegalArgumentException if the string is an invalid format
+      */
+-    public static Locale toLocale(String str) {
++public static Locale toLocale(String str) {
+         if (str == null) {
+             return null;
+         }
+@@ -111,6 +111,9 @@
+                 throw new IllegalArgumentException("Invalid locale format: " + str);
+             }
+             char ch3 = str.charAt(3);
++            if (ch3 == '_') {
++                return new Locale(str.substring(0, 2), "", str.substring(4));
++            }
+             char ch4 = str.charAt(4);
+             if (ch3 < 'A' || ch3 > 'Z' || ch4 < 'A' || ch4 > 'Z') {
+                 throw new IllegalArgumentException("Invalid locale format: " + str);
+@@ -126,6 +129,7 @@
+         }
+     }
+ 
++
+     //-----------------------------------------------------------------------
+     /**
+      * <p>Obtains the list of locales to search through when performing

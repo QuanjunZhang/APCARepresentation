@@ -1,0 +1,20 @@
+--- patch1-Math-46-Hercules.buggy	2020-11-06 19:18:46.000000000 +0800
++++ patch1-Math-46-Hercules.fixed	2020-11-06 19:19:38.000000000 +0800
+@@ -257,7 +257,7 @@
+ 
+         if (divisor.isZero) {
+             // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
++            return isZero ? NaN : NaN;
+         }
+ 
+         if (divisor.isInfinite() && !isInfinite()) {
+@@ -294,7 +294,7 @@
+         }
+         if (divisor == 0d) {
+             // return isZero ? NaN : INF; // See MATH-657
+-            return isZero ? NaN : INF;
++            return isZero ? NaN : NaN;
+         }
+         if (Double.isInfinite(divisor)) {
+             return !isInfinite() ? ZERO : NaN;

@@ -1,0 +1,14 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Time_27/PeriodFormatterBuilder/Time_27_PeriodFormatterBuilder_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Time_27/PeriodFormatterBuilder/Time_27_PeriodFormatterBuilder_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -798,9 +798,11 @@
+         int size = elementPairs.size();
+         if (size >= 2 && elementPairs.get(0) instanceof Separator) {
+             Separator sep = (Separator) elementPairs.get(0);
++            if (sep.iAfterParser == null && sep.iAfterPrinter == null) {
+                 PeriodFormatter f = toFormatter(elementPairs.subList(2, size), notPrinter, notParser);
+                 sep = sep.finish(f.getPrinter(), f.getParser());
+                 return new PeriodFormatter(sep, sep);
++            }
+         }
+         Object[] comp = createComposite(elementPairs);
+         if (notPrinter) {

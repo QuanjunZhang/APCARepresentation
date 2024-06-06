@@ -1,0 +1,11 @@
+--- patch1-Math-2-Hercules.buggy	2020-11-06 20:34:30.000000000 +0800
++++ patch1-Math-2-Hercules.fixed	2020-11-06 20:35:19.000000000 +0800
+@@ -265,7 +265,7 @@
+      * size {@code n}, the mean is {@code n * m / N}.
+      */
+     public double getNumericalMean() {
+-        return (double) (getSampleSize() * getNumberOfSuccesses()) / (double) getPopulationSize();
++        return ((double)(((getSampleSize()) * (getSupportUpperBound())))) / ((double)(getPopulationSize()));
+     }
+ 
+     /**

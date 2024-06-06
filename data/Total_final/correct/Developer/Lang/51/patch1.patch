@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_51/BooleanUtils/Lang_51_BooleanUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_51/BooleanUtils/Lang_51_BooleanUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -679,6 +679,7 @@
+                         (str.charAt(1) == 'E' || str.charAt(1) == 'e') &&
+                         (str.charAt(2) == 'S' || str.charAt(2) == 's');
+                 }
++                return false;
+             }
+             case 4: {
+                 char ch = str.charAt(0);

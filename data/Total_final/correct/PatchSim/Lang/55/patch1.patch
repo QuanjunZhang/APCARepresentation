@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/correct/Patch25/Lang_55/StopWatch/Lang_55_StopWatch_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/correct/Patch25/Lang_55/StopWatch/Lang_55_StopWatch_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -115,6 +115,7 @@
+         if(this.runningState != STATE_RUNNING && this.runningState != STATE_SUSPENDED) {
+             throw new IllegalStateException("Stopwatch is not running. ");
+         }
++            if(-1 == org.apache.commons.lang.time.StopWatch.this.stopTime)
+             stopTime = System.currentTimeMillis();
+         this.runningState = STATE_STOPPED;
+     }

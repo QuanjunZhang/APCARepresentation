@@ -1,0 +1,23 @@
+--- /tmp/GenProg_Defects4J_Math_95/src/java/org/apache/commons/math/distribution/FDistributionImpl.java	2019-08-01 18:27:13.538747654 -0400
++++ /tmp/GenProg_Defects4J_Math_95/patches_eusf/Patch_386/patched/org/apache/commons/math/distribution/FDistributionImpl.java	2019-08-01 18:41:21.707657011 -0400
+@@ -72,7 +72,10 @@
+         if (x <= 0.0) {
+             ret = 0.0;
+         } else {
+-            double n = getNumeratorDegreesOfFreedom();
++            setDenominatorDegreesOfFreedom(denominatorDegreesOfFreedom);
++			setDenominatorDegreesOfFreedom(denominatorDegreesOfFreedom);
++			setDenominatorDegreesOfFreedom(denominatorDegreesOfFreedom);
++			double n = getNumeratorDegreesOfFreedom();
+             double m = getDenominatorDegreesOfFreedom();
+             
+             ret = Beta.regularizedBeta((n * x) / (m + n * x),
+@@ -145,7 +148,7 @@
+         double d = getDenominatorDegreesOfFreedom();
+             // use mean
+             ret = d / (d - 2.0);
+-        return ret;
++        return p;
+     }
+     
+     /**

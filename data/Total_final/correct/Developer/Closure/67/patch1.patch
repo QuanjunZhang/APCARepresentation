@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_67/AnalyzePrototypeProperties/Closure_67_AnalyzePrototypeProperties_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_67/AnalyzePrototypeProperties/Closure_67_AnalyzePrototypeProperties_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -315,7 +315,7 @@
+       Node n = assign.getFirstChild();
+       if (n != null && NodeUtil.isVarOrSimpleAssignLhs(n, assign)
+           && n.getType() == Token.GETPROP
+-          ) {
++          && assign.getParent().getType() == Token.EXPR_RESULT) {
+         // We want to exclude the assignment itself from the usage list
+         boolean isChainedProperty =
+             n.getFirstChild().getType() == Token.GETPROP;

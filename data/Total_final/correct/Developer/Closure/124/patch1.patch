@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_124/ExploitAssigns/Closure_124_ExploitAssigns_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_124/ExploitAssigns/Closure_124_ExploitAssigns_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -210,7 +210,9 @@
+     }
+     Preconditions.checkArgument(node.isGetProp());
+ 
++    while (node.isGetProp()) {
+       node = node.getFirstChild();
++    }
+     if (node.isName()
+         && isNameAssignedTo(node.getString(), replacement)) {
+       return false;

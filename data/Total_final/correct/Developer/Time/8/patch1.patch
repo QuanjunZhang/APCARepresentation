@@ -1,0 +1,22 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Time_8/DateTimeZone/Time_8_DateTimeZone_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Time_8/DateTimeZone/Time_8_DateTimeZone_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -276,14 +276,17 @@
+         if (hoursOffset < -23 || hoursOffset > 23) {
+             throw new IllegalArgumentException("Hours out of range: " + hoursOffset);
+         }
+-        if (minutesOffset < 0 || minutesOffset > 59) {
++        if (minutesOffset < -59 || minutesOffset > 59) {
+             throw new IllegalArgumentException("Minutes out of range: " + minutesOffset);
+         }
++        if (hoursOffset > 0 && minutesOffset < 0) {
++            throw new IllegalArgumentException("Positive hours must not have negative minutes: " + minutesOffset);
++        }
+         int offset = 0;
+         try {
+             int hoursInMinutes = hoursOffset * 60;
+             if (hoursInMinutes < 0) {
+-                minutesOffset = hoursInMinutes - minutesOffset;
++                minutesOffset = hoursInMinutes - Math.abs(minutesOffset);
+             } else {
+                 minutesOffset = hoursInMinutes + minutesOffset;
+             }

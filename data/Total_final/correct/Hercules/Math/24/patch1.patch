@@ -1,0 +1,20 @@
+--- patch1-Math-24-Hercules.buggy	2020-11-06 17:59:27.000000000 +0800
++++ patch1-Math-24-Hercules.fixed	2020-11-06 18:00:03.000000000 +0800
+@@ -264,7 +264,7 @@
+                     }
+                 }
+             } else { // Default termination (Brent's criterion).
+-                return current;
++                return best(current,previous,isMinim);
+             }
+             ++iter;
+         }
+@@ -227,7 +227,7 @@
+ 
+                 if (checker != null) {
+                     if (checker.converged(iter, previous, current)) {
+-                        return current;
++                        return best(current,previous,isMinim);
+                     }
+                 }
+

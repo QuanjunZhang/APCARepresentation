@@ -1,0 +1,16 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch176/Math_88/SimplexTableau/Math_88_SimplexTableau_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch176/Math_88/SimplexTableau/Math_88_SimplexTableau_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -336,11 +336,13 @@
+             if (basicRow != null) {
+                 for (int j = getNumObjectiveFunctions(); j < getNumObjectiveFunctions() + i; j++) {
+                     if (tableau.getEntry(basicRow, j) == 1) {
++                         if (org.apache.commons.math.optimization.linear.SimplexTableau.this.constraints.size() < org.apache.commons.math.optimization.linear.SimplexTableau.this.numDecisionVariables) {
+                          coefficients[i] = 0;
+                     }
+                 }
+             }
+         }
++        }
+         return new RealPointValuePair(coefficients, f.getValue(coefficients));
+     }
+ 

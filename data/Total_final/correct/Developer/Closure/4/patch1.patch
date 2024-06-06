@@ -1,0 +1,20 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_4/NamedType/Closure_4_NamedType_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_4/NamedType/Closure_4_NamedType_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -187,7 +187,7 @@
+     // makes more sense. Now, resolution via registry is first in order to
+     // avoid triggering the warnings built into the resolution via properties.
+     boolean resolved = resolveViaRegistry(t, enclosing);
+-    if (detectImplicitPrototypeCycle()) {
++    if (detectInheritanceCycle()) {
+       handleTypeCycle(t);
+     }
+ 
+@@ -199,7 +199,7 @@
+     }
+ 
+     resolveViaProperties(t, enclosing);
+-    if (detectImplicitPrototypeCycle()) {
++    if (detectInheritanceCycle()) {
+       handleTypeCycle(t);
+     }
+ 

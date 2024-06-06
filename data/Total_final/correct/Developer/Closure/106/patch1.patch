@@ -1,0 +1,25 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_106/JSDocInfoBuilder/Closure_106_JSDocInfoBuilder_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_106/JSDocInfoBuilder/Closure_106_JSDocInfoBuilder_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -186,9 +186,7 @@
+    * @return {@code true} if the description was recorded.
+    */
+   public boolean recordBlockDescription(String description) {
+-    if (parseDocumentation) {
+     populated = true;
+-    }
+     return currentInfo.documentBlock(description);
+   }
+ 
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_106/GlobalNamespace/Closure_106_GlobalNamespace_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_106/GlobalNamespace/Closure_106_GlobalNamespace_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -904,6 +904,10 @@
+       // Don't try to collapse if the one global set is a twin reference.
+       // We could theoretically handle this case in CollapseProperties, but
+       // it's probably not worth the effort.
++      Preconditions.checkNotNull(declaration);
++      if (declaration.getTwin() != null) {
++        return false;
++      }
+ 
+       if (isClassOrEnum) {
+         return true;

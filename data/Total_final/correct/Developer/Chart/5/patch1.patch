@@ -1,0 +1,19 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_5/XYSeries/Chart_5_XYSeries_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_5/XYSeries/Chart_5_XYSeries_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -541,11 +541,15 @@
+         if (x == null) {
+             throw new IllegalArgumentException("Null 'x' argument.");
+         }
++        if (this.allowDuplicateXValues) {
++            add(x, y);
++            return null;
++        }
+ 
+         // if we get to here, we know that duplicate X values are not permitted
+         XYDataItem overwritten = null;
+         int index = indexOf(x);
+-        if (index >= 0 && !this.allowDuplicateXValues) {
++        if (index >= 0) {
+             XYDataItem existing = (XYDataItem) this.data.get(index);
+             try {
+                 overwritten = (XYDataItem) existing.clone();

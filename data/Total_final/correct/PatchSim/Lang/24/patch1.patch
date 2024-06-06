@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/correct/Patch191/Lang_24/NumberUtils/Lang_24_NumberUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/correct/Patch191/Lang_24/NumberUtils/Lang_24_NumberUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -1409,6 +1409,7 @@
+             }
+             if (chars[i] == 'l'
+                 || chars[i] == 'L') {
++ 	if (hasDecPoint==true){return false;}
+                 // not allowing L with an exponent or decimal point
+                 return foundDigit && !hasExp;
+             }

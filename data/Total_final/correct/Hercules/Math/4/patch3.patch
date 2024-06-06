@@ -1,0 +1,12 @@
+--- patch2-Math-4-Hercules.buggy	2020-11-06 19:04:38.000000000 +0800
++++ patch2-Math-4-Hercules.fixed	2020-11-06 19:10:13.000000000 +0800
+@@ -118,6 +118,9 @@
+         // check location of point with respect to second sub-line
+         Location loc2 = subLine.remainingRegion.checkPoint(subLine.line.toSubSpace(v1D));
+ 
++        if ((line1 == null) || (v2D == null))
++            return null;
++        
+         if (includeEndPoints) {
+             return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;
+         } else {

@@ -1,0 +1,20 @@
+--- patch1-Lang-51-Hercules.buggy	2020-11-06 21:39:34.000000000 +0800
++++ patch1-Lang-51-Hercules.fixed	2020-11-06 21:40:13.000000000 +0800
+@@ -669,7 +669,7 @@
+             }
+             case 3: {
+                 char ch = str.charAt(0);
+-                if (ch == 'y') {
++                if (ch != 'y') {
+                     return 
+                         (str.charAt(1) == 'e' || str.charAt(1) == 'E') &&
+                         (str.charAt(2) == 's' || str.charAt(2) == 'S');
+@@ -674,7 +674,7 @@
+                         (str.charAt(1) == 'e' || str.charAt(1) == 'E') &&
+                         (str.charAt(2) == 's' || str.charAt(2) == 'S');
+                 }
+-                if (ch == 'Y') {
++                if (ch != 'Y') {
+                     return 
+                         (str.charAt(1) == 'E' || str.charAt(1) == 'e') &&
+                         (str.charAt(2) == 'S' || str.charAt(2) == 's');

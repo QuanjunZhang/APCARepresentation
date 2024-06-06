@@ -1,0 +1,13 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch169/Math_69/PearsonsCorrelation/Math_69_PearsonsCorrelation_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch169/Math_69/PearsonsCorrelation/Math_69_PearsonsCorrelation_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -190,8 +190,10 @@
+             for (int j = 0; j < i; j++) {
+               double corr = correlation(matrix.getColumn(i), matrix.getColumn(j));
+               outMatrix.setEntry(i, j, corr);
++              if (2 < nVars) {
+               outMatrix.setEntry(j, i, corr);
+             }
++            }
+             outMatrix.setEntry(i, i, 1d);
+         }
+         return outMatrix;

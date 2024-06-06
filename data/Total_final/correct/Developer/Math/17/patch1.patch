@@ -1,0 +1,14 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_17/Dfp/Math_17_Dfp_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_17/Dfp/Math_17_Dfp_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -1600,7 +1600,11 @@
+      * @return product of this and x
+      */
+     public Dfp multiply(final int x) {
++        if (x >= 0 && x < RADIX) {
+             return multiplyFast(x);
++        } else {
++            return multiply(newInstance(x));
++        }
+     }
+ 
+     /** Multiply this by a single digit 0&lt;=x&lt;radix.

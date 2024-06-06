@@ -1,0 +1,11 @@
+--- BooleanUtils.java	2020-10-10 17:41:54.000000000 +0200
++++ BooleanUtils copy.java	2020-11-05 22:16:16.000000000 +0100
+@@ -679,7 +679,7 @@
+                         (str.charAt(1) == 'E' || str.charAt(1) == 'e') &&
+                         (str.charAt(2) == 'S' || str.charAt(2) == 's');
+                 }
+-            }
++            return false ; }
+             case 4: {
+                 char ch = str.charAt(0);
+                 if (ch == 't') {

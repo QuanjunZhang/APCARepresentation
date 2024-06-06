@@ -1,0 +1,17 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/Cardumen/Incorrect/Math/patch1-Math-73-Cardumen.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/Cardumen/Incorrect/Math/patch1-Math-73-Cardumen.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -134,11 +134,12 @@
+         }
+ 
+ 
+-        // full Brent algorithm starting with provided initial guess
+-        return solve(f, min, yMin, max, yMax, initial, yInitial);
++ 
++		return solve(f, max, max);
+ 
+     }
+ 
++
+     /**
+      * Find a zero in the given interval.
+      * <p>

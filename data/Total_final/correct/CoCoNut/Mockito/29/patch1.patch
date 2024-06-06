@@ -1,0 +1,11 @@
+--- Same.java	2020-10-10 17:52:44.000000000 +0200
++++ Same copy.java	2020-11-05 23:57:20.000000000 +0100
+@@ -26,7 +26,7 @@
+     public void describeTo(Description description) {
+         description.appendText("same(");
+         appendQuoting(description);
+-        description.appendText(wanted.toString());
++        if( wanted != null ) { description.appendText( wanted.toString( ) ) ; }
+         appendQuoting(description);
+         description.appendText(")");
+     }

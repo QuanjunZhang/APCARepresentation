@@ -1,0 +1,25 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_46/RecordType/Closure_46_RecordType_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_46/RecordType/Closure_46_RecordType_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -137,22 +137,6 @@
+         propertyNode);
+   }
+ 
+-  @Override
+-  public JSType getLeastSupertype(JSType that) {
+-    if (!that.isRecordType()) {
+-      return super.getLeastSupertype(that);
+-    }
+-    RecordTypeBuilder builder = new RecordTypeBuilder(registry);
+-    for (String property : properties.keySet()) {
+-      if (that.toMaybeRecordType().hasProperty(property) &&
+-          that.toMaybeRecordType().getPropertyType(property).isEquivalentTo(
+-              getPropertyType(property))) {
+-        builder.addProperty(property, getPropertyType(property),
+-            getPropertyNode(property));
+-      }
+-    }
+-    return builder.build();
+-  }
+   JSType getGreatestSubtypeHelper(JSType that) {
+     if (that.isRecordType()) {
+       RecordType thatRecord = that.toMaybeRecordType();

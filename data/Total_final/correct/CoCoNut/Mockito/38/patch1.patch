@@ -1,0 +1,10 @@
+--- ArgumentMatchingTool.java	2020-10-16 23:43:30.000000000 +0200
++++ ArgumentMatchingTool copy.java	2020-11-05 23:59:12.000000000 +0100
+@@ -45,6 +45,6 @@
+     }
+ 
+     private boolean toStringEquals(Matcher m, Object arg) {
+-        return StringDescription.toString(m).equals(arg.toString());
++         return StringDescription.toString( m ).equals( String.valueOf( arg ) ) ;
+     }
+ }

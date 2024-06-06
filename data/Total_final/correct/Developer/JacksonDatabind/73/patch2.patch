@@ -1,0 +1,22 @@
+--- a/src/main/java/com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java
++++ b/src/main/java/com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java
+@@ -4,6 +4,7 @@ import java.lang.reflect.Modifier;
+ import java.util.*;
+ 
+ import com.fasterxml.jackson.annotation.JsonAnySetter;
++import com.fasterxml.jackson.annotation.JsonProperty.Access;
+ import com.fasterxml.jackson.databind.*;
+ import com.fasterxml.jackson.databind.cfg.HandlerInstantiator;
+ import com.fasterxml.jackson.databind.cfg.MapperConfig;
+@@ -728,7 +729,10 @@ public class POJOPropertiesCollector
+         while (it.hasNext()) {
+             POJOPropertyBuilder prop = it.next();
+             // 26-Jan-2017, tatu: [databind#935]: need to denote removal of
+-            prop.removeNonVisible(inferMutators);
++            Access acc = prop.removeNonVisible(inferMutators);
++            if (!_forSerialization && (acc == Access.READ_ONLY)) {
++                _collectIgnorals(prop.getName());
++            }
+         }
+     }
+ 

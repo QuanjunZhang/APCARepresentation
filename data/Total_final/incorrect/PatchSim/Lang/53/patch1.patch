@@ -1,0 +1,13 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch152/Lang_53/DateUtils/Lang_53_DateUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch152/Lang_53/DateUtils/Lang_53_DateUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -663,8 +663,10 @@
+         // reset time
+         if (date.getTime() != time) {
+             date.setTime(time);
++            if (org.apache.commons.lang.time.DateUtils.RANGE_WEEK_CENTER == millisecs) {
+             val.setTime(date);
+         }
++        }
+         // ----------------- Fix for LANG-59 ----------------------- END ----------------
+ 
+         boolean roundUp = false;

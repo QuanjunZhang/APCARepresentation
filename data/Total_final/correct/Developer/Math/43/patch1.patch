@@ -1,0 +1,19 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_43/SummaryStatistics/Math_43_SummaryStatistics_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_43/SummaryStatistics/Math_43_SummaryStatistics_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -155,13 +155,13 @@
+         secondMoment.increment(value);
+         // If mean, variance or geomean have been overridden,
+         // need to increment these
+-        if (!(meanImpl instanceof Mean)) {
++        if (meanImpl != mean) {
+             meanImpl.increment(value);
+         }
+-        if (!(varianceImpl instanceof Variance)) {
++        if (varianceImpl != variance) {
+             varianceImpl.increment(value);
+         }
+-        if (!(geoMeanImpl instanceof GeometricMean)) {
++        if (geoMeanImpl != geoMean) {
+             geoMeanImpl.increment(value);
+         }
+         n++;

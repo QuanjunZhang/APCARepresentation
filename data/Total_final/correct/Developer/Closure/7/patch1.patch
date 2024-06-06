@@ -1,0 +1,17 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_7/ChainableReverseAbstractInterpreter/Closure_7_ChainableReverseAbstractInterpreter_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_7/ChainableReverseAbstractInterpreter/Closure_7_ChainableReverseAbstractInterpreter_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -610,9 +610,13 @@
+     public JSType caseObjectType(ObjectType type) {
+       if (value.equals("function")) {
+         JSType ctorType = getNativeType(U2U_CONSTRUCTOR_TYPE);
+-        return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : null;
++        if (resultEqualsValue) {
+           // Objects are restricted to "Function", subtypes are left
++          return ctorType.getGreatestSubtype(type);
++        } else {
+           // Only filter out subtypes of "function"
++          return type.isSubtype(ctorType) ? null : type;
++        }
+       }
+       return matchesExpectation("object") ? type : null;
+     }

@@ -1,0 +1,41 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_50/FastDateFormat/Lang_50_FastDateFormat_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_50/FastDateFormat/Lang_50_FastDateFormat_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -282,16 +282,14 @@
+             key = new Pair(key, timeZone);
+         }
+ 
+-        if (locale != null) {
+-            key = new Pair(key, locale);
++        if (locale == null) {
++            locale = Locale.getDefault();
+         }
+ 
++        key = new Pair(key, locale);
+ 
+         FastDateFormat format = (FastDateFormat) cDateInstanceCache.get(key);
+         if (format == null) {
+-            if (locale == null) {
+-                locale = Locale.getDefault();
+-            }
+             try {
+                 SimpleDateFormat formatter = (SimpleDateFormat) DateFormat.getDateInstance(style, locale);
+                 String pattern = formatter.toPattern();
+@@ -462,15 +460,13 @@
+         if (timeZone != null) {
+             key = new Pair(key, timeZone);
+         }
+-        if (locale != null) {
+-            key = new Pair(key, locale);
++        if (locale == null) {
++            locale = Locale.getDefault();
+         }
++        key = new Pair(key, locale);
+ 
+         FastDateFormat format = (FastDateFormat) cDateTimeInstanceCache.get(key);
+         if (format == null) {
+-            if (locale == null) {
+-                locale = Locale.getDefault();
+-            }
+             try {
+                 SimpleDateFormat formatter = (SimpleDateFormat) DateFormat.getDateTimeInstance(dateStyle, timeStyle,
+                         locale);

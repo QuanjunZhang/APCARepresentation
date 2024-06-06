@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch182/Time_11/DateTimeZoneBuilder/Time_11_DateTimeZoneBuilder_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch182/Time_11/DateTimeZoneBuilder/Time_11_DateTimeZoneBuilder_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -1455,8 +1455,7 @@
+             }
+ 
+             if (tailZone != null) {
+-                if (tailZone.iStartRecurrence.getNameKey()
+-                    .equals(tailZone.iEndRecurrence.getNameKey())) {
++                if (id.length()==0) {
+                     if (ZoneInfoCompiler.verbose()) {
+                         System.out.println("Fixing duplicate recurrent name key - " +
+                                            tailZone.iStartRecurrence.getNameKey());

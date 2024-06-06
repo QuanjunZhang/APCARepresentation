@@ -1,0 +1,11 @@
+--- patch1-Closure-86-Hercules.buggys	2020-11-03 23:27:56.000000000 +0800
++++ patch1-Closure-86-Hercules.fixed	2020-11-03 23:28:41.000000000 +0800
+@@ -2462,7 +2462,7 @@
+         // TODO(nicksantos): This needs to be changed so that it
+         // returns true iff we're sure the value was never aliased from inside
+         // the constructor (similar to callHasLocalResult)
+-        return true;
++        return !(true);
+       case Token.FUNCTION:
+       case Token.REGEXP:
+       case Token.ARRAYLIT:

@@ -1,0 +1,44 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_18/DefaultKeyedValues/Chart_18_DefaultKeyedValues_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_18/DefaultKeyedValues/Chart_18_DefaultKeyedValues_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -315,9 +315,7 @@
+     public void removeValue(int index) {
+         this.keys.remove(index);
+         this.values.remove(index);
+-        if (index < this.keys.size()) {
+         rebuildIndex();
+-        }
+     }
+ 
+     /**
+@@ -332,7 +330,8 @@
+     public void removeValue(Comparable key) {
+         int index = getIndex(key);
+         if (index < 0) {
+-			return;
++            throw new UnknownKeyException("The key (" + key 
++                    + ") is not recognised.");
+         }
+         removeValue(index);
+     }
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_18/DefaultKeyedValues2D/Chart_18_DefaultKeyedValues2D_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Chart_18/DefaultKeyedValues2D/Chart_18_DefaultKeyedValues2D_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -452,10 +452,19 @@
+      * @see #removeRow(Comparable)
+      */
+     public void removeColumn(Comparable columnKey) {
++    	if (columnKey == null) {
++    		throw new IllegalArgumentException("Null 'columnKey' argument.");
++    	}
++    	if (!this.columnKeys.contains(columnKey)) {
++    		throw new UnknownKeyException("Unknown key: " + columnKey);
++    	}
+         Iterator iterator = this.rows.iterator();
+         while (iterator.hasNext()) {
+             DefaultKeyedValues rowData = (DefaultKeyedValues) iterator.next();
++            int index = rowData.getIndex(columnKey);
++            if (index >= 0) {
+                 rowData.removeValue(columnKey);
++            }
+         }
+         this.columnKeys.remove(columnKey);
+     }

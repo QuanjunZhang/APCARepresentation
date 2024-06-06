@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_33/PrototypeObjectType/Closure_33_PrototypeObjectType_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_33/PrototypeObjectType/Closure_33_PrototypeObjectType_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -554,6 +554,9 @@
+   @Override
+   public void matchConstraint(ObjectType constraintObj) {
+     // We only want to match contraints on anonymous types.
++    if (hasReferenceName()) {
++      return;
++    }
+ 
+     // Handle the case where the constraint object is a record type.
+     //

@@ -1,0 +1,38 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_49/OpenMapRealVector/Math_49_OpenMapRealVector_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_49/OpenMapRealVector/Math_49_OpenMapRealVector_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -342,7 +342,7 @@
+     public OpenMapRealVector ebeDivide(RealVector v) {
+         checkVectorDimensions(v.getDimension());
+         OpenMapRealVector res = new OpenMapRealVector(this);
+-        Iterator iter = res.entries.iterator();
++        Iterator iter = entries.iterator();
+         while (iter.hasNext()) {
+             iter.advance();
+             res.setEntry(iter.key(), iter.value() / v.getEntry(iter.key()));
+@@ -355,7 +355,7 @@
+     public OpenMapRealVector ebeDivide(double[] v) {
+         checkVectorDimensions(v.length);
+         OpenMapRealVector res = new OpenMapRealVector(this);
+-        Iterator iter = res.entries.iterator();
++        Iterator iter = entries.iterator();
+         while (iter.hasNext()) {
+             iter.advance();
+             res.setEntry(iter.key(), iter.value() / v[iter.key()]);
+@@ -367,7 +367,7 @@
+     public OpenMapRealVector ebeMultiply(RealVector v) {
+         checkVectorDimensions(v.getDimension());
+         OpenMapRealVector res = new OpenMapRealVector(this);
+-        Iterator iter = res.entries.iterator();
++        Iterator iter = entries.iterator();
+         while (iter.hasNext()) {
+             iter.advance();
+             res.setEntry(iter.key(), iter.value() * v.getEntry(iter.key()));
+@@ -380,7 +380,7 @@
+     public OpenMapRealVector ebeMultiply(double[] v) {
+         checkVectorDimensions(v.length);
+         OpenMapRealVector res = new OpenMapRealVector(this);
+-        Iterator iter = res.entries.iterator();
++        Iterator iter = entries.iterator();
+         while (iter.hasNext()) {
+             iter.advance();
+             res.setEntry(iter.key(), iter.value() * v[iter.key()]);

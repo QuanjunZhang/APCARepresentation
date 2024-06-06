@@ -1,0 +1,20 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_35/ArrayUtils/Lang_35_ArrayUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_35/ArrayUtils/Lang_35_ArrayUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -3292,7 +3292,7 @@
+         } else if (element != null) {
+             type = element.getClass();
+         } else {
+-            type = Object.class;
++            throw new IllegalArgumentException("Arguments cannot both be null");            
+         }
+         @SuppressWarnings("unchecked") // type must be T
+         T[] newArray = (T[]) copyArrayGrow1(array, type);
+@@ -3571,7 +3571,7 @@
+         } else if (element != null) {
+             clss = element.getClass();
+         } else {
+-            return (T[]) new Object[] { null };
++            throw new IllegalArgumentException("Array and element cannot both be null");            
+         }
+         @SuppressWarnings("unchecked") // the add method creates an array of type clss, which is type T
+         final T[] newArray = (T[]) add(array, index, element, clss);

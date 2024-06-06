@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_97/PeepholeFoldConstants/Closure_97_PeepholeFoldConstants_s.java	2020-08-13 10:38:48.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/Closure/human-closure/Closure_97/PeepholeFoldConstants/Closure_97_PeepholeFoldConstants_t.java	2020-08-13 10:38:48.000000000 +0200
+@@ -695,7 +695,8 @@
+           // JavaScript handles zero shifts on signed numbers differently than
+           // Java as an Java int can not represent the unsigned 32-bit number
+           // where JavaScript can so use a long here.
+-          result = lvalInt >>> rvalInt;
++          long lvalLong = lvalInt & 0xffffffffL;
++          result = lvalLong >>> rvalInt;
+           break;
+         default:
+           throw new AssertionError("Unknown shift operator: " +

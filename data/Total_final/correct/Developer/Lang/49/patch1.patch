@@ -1,0 +1,12 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_49/Fraction/Lang_49_Fraction_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Lang_49/Fraction/Lang_49_Fraction_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -463,6 +463,9 @@
+      * @return a new reduced fraction instance, or this if no simplification possible
+      */
+     public Fraction reduce() {
++        if (numerator == 0) {
++            return equals(ZERO) ? this : ZERO;
++        }
+         int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+         if (gcd == 1) {
+             return this;

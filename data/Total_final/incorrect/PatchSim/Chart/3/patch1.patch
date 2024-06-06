@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch4/Chart_3/TimeSeries/Chart_3_TimeSeries_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch4/Chart_3/TimeSeries/Chart_3_TimeSeries_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -882,7 +882,7 @@
+                 this.data.remove(0);
+                 removed = true;
+             }
+-            if (removed) {
++            if(org.jfree.data.time.TimeSeries.this.data!=null) {
+                 findBoundsByIteration();
+                 if (notify) {
+                     fireSeriesChanged();

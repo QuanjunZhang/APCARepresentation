@@ -1,0 +1,13 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch157/Math_24/FunctionUtils/Math_24_FunctionUtils_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch157/Math_24/FunctionUtils/Math_24_FunctionUtils_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -143,8 +143,10 @@
+             public double value(double x) {
+                 double r = f[0].value(x);
+                 for (int i = 1; i < f.length; i++) {
++                    if ((0 < r) || (!(-1 <= r))) {
+                     r += f[i].value(x);
+                 }
++                }
+                 return r;
+             }
+         };

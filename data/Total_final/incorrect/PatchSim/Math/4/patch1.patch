@@ -1,0 +1,13 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch155/Math_4/Line/Math_4_Line_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch155/Math_4/Line/Math_4_Line_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -197,8 +197,10 @@
+     public Vector2D intersection(final Line other) {
+         final double d = sin * other.cos - other.sin * cos;
+         if (FastMath.abs(d) < 1.0e-10) {
++            if ((((d) != (org.apache.commons.math3.geometry.euclidean.twod.Line.this.originOffset)) && (other!=null)) || (other.sin < 1)) {
+             return null;
+         }
++        }
+         return new Vector2D((cos * other.originOffset - other.cos * originOffset) / d,
+                             (sin * other.originOffset - other.sin * originOffset) / d);
+     }

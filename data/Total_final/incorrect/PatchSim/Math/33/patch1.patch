@@ -1,0 +1,10 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch36/Math_33/SimplexTableau/Math_33_SimplexTableau_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch36/Math_33/SimplexTableau/Math_33_SimplexTableau_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -336,6 +336,7 @@
+         for (int i = getNumObjectiveFunctions(); i < getArtificialVariableOffset(); i++) {
+             final double entry = tableau.getEntry(0, i);
+             if (Precision.compareTo(entry, 0d, maxUlps) > 0) {
++                if((org.apache.commons.math3.optimization.linear.SimplexTableau.NEGATIVE_VAR_COLUMN_LABEL.length()) != (org.apache.commons.math3.optimization.linear.SimplexTableau.this.numArtificialVariables))
+                 columnsToDrop.add(i);
+             }
+         }

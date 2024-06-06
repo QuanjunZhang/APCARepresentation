@@ -1,0 +1,11 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_69/PearsonsCorrelation/Math_69_PearsonsCorrelation_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_69/PearsonsCorrelation/Math_69_PearsonsCorrelation_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -168,7 +168,7 @@
+                 } else {
+                     double r = correlationMatrix.getEntry(i, j);
+                     double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));
+-                    out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));
++                    out[i][j] = 2 * tDistribution.cumulativeProbability(-t);
+                 }
+             }
+         }

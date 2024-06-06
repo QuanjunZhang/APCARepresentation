@@ -1,0 +1,11 @@
+--- patch1-Math-25-Hercules.buggy	2020-11-06 18:07:27.000000000 +0800
++++ patch1-Math-25-Hercules.fixed	2020-11-06 18:09:49.000000000 +0800
+@@ -323,6 +323,8 @@
+                     // In some ill-conditioned cases (cf. MATH-844), the guesser
+                     // procedure cannot produce sensible results.
+ 
++                if ((c2 == 0.0) || (c1 == 0.0))
++                    throw new.MathIllegalStateException();
+                 a = FastMath.sqrt(c1 / c2);
+                 omega = FastMath.sqrt(c2 / c3);
+             }

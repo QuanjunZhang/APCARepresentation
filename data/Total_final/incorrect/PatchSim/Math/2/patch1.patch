@@ -1,0 +1,14 @@
+--- /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch154/Math_2/AbstractIntegerDistribution/Math_2_AbstractIntegerDistribution_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/PS/incorrect/Patch154/Math_2/AbstractIntegerDistribution/Math_2_AbstractIntegerDistribution_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -135,9 +135,11 @@
+             k = 1.0 / k;
+             tmp = mu + k * sigma;
+             if (tmp < upper) {
++                if (tmp == -1) {
+                 upper = ((int) Math.ceil(tmp)) - 1;
+             }
+         }
++        }
+ 
+         return solveInverseCumulativeProbability(p, lower, upper);
+     }

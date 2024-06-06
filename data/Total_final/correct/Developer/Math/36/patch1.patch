@@ -1,0 +1,32 @@
+--- /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_36/BigFraction/Math_36_BigFraction_s.java	2020-08-13 10:38:58.000000000 +0200
++++ /Users/haoye.tian/Downloads/ODS/data/human_patches/Math_36/BigFraction/Math_36_BigFraction_t.java	2020-08-13 10:38:58.000000000 +0200
+@@ -683,8 +683,14 @@
+     @Override
+     public double doubleValue() {
+         double result = numerator.doubleValue() / denominator.doubleValue();
++        if (Double.isNaN(result)) {
+             // Numerator and/or denominator must be out of range:
+             // Calculate how far to shift them to put them in range.
++            int shift = Math.max(numerator.bitLength(),
++                                 denominator.bitLength()) - Double.MAX_EXPONENT;
++            result = numerator.shiftRight(shift).doubleValue() /
++                denominator.shiftRight(shift).doubleValue();
++        }
+         return result;
+     }
+ 
+@@ -730,8 +736,14 @@
+     @Override
+     public float floatValue() {
+         float result = numerator.floatValue() / denominator.floatValue();
++        if (Double.isNaN(result)) {
+             // Numerator and/or denominator must be out of range:
+             // Calculate how far to shift them to put them in range.
++            int shift = Math.max(numerator.bitLength(),
++                                 denominator.bitLength()) - Float.MAX_EXPONENT;
++            result = numerator.shiftRight(shift).floatValue() /
++                denominator.shiftRight(shift).floatValue();
++        }
+         return result;
+     }
+ 

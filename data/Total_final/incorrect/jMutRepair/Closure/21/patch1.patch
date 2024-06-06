@@ -1,0 +1,21 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Closure/patch1-Closure-21-jMutRepair.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jMutRepair/Incorrect/Closure/patch1-Closure-21-jMutRepair.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -114,13 +114,14 @@
+       if (isResultUsed) {
+         return;
+       }
+-      if (n == parent.getLastChild()) {
++ 			if (n == (parent.getLastChild())) {
+         for (Node an : parent.getAncestors()) {
+           int ancestorType = an.getType();
+-          if (ancestorType == Token.COMMA) continue;
+-          if (ancestorType != Token.EXPR_RESULT && ancestorType != Token.BLOCK) return;
+-          else break;
++					if (ancestorType >= (Token.COMMA)) 						continue;
++ 					if ((ancestorType != (Token.EXPR_RESULT)) && (ancestorType != (Token.BLOCK))) 						return;else
++ 						break;
+         }
++
+       }
+     } else if (parent.getType() != Token.EXPR_RESULT && parent.getType() != Token.BLOCK) {
+       if (! (parent.getType() == Token.FOR && parent.getChildCount() == 4 && (n == parent.getFirstChild() || n == parent.getFirstChild().getNext().getNext()))) {

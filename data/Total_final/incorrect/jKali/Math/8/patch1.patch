@@ -1,0 +1,22 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Math/patch1-Math-8-jKali.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Incorrect/Math/patch1-Math-8-jKali.fixed	2020-11-02 21:48:08.000000000 +0100
+@@ -184,14 +184,15 @@
+                     sampleSize);
+         }
+ 
+-        final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
++ 		final T[] out = ((T[]) (java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize)));
++ 
++
++
+ 
+-        for (int i = 0; i < sampleSize; i++) {
+-            out[i] = sample();
+-        }
+ 
+         return out;
+ 
++
+     }
+ 
+ }

@@ -1,0 +1,17 @@
+--- /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Correct/Lang/patch1-Lang-7-jKali.buggy	2020-11-02 19:13:13.000000000 +0100
++++ /Users/haoye.tian/Documents/University/data/PatchCollecting/jKali/Correct/Lang/patch1-Lang-7-jKali.fixed	2020-11-02 19:13:13.000000000 +0100
+@@ -450,10 +450,11 @@
+             throw new NumberFormatException("A blank string is not a valid number");
+         }  
+         if (str.startsWith("--")) {
+-            return null;
++
+         }
+-        if (str.startsWith("0x") || str.startsWith("-0x") || str.startsWith("0X") || str.startsWith("-0X")) {
+-            int hexDigits = str.length() - 2; // drop 0x
++ 		if ((((str.startsWith("0x")) || (str.startsWith("-0x"))) || (str.startsWith("0X"))) || (str.startsWith("-0X"))) {
++ 			int hexDigits = (str.length()) - 2;
++
+             if (str.startsWith("-")) { // drop -
+                 hexDigits--;
+             }
