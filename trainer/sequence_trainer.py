@@ -7,8 +7,8 @@ import torch.nn as nn
 import numpy as np
 from bases.base_trainer import BaseTrainer
 from utils.pymodels_util import get_average, to_cuda
-from utils.util import get_pretty_metric, save_json
-from evaluation.evaluator.classification_evaluator import ClassificationEvaluator
+from utils.util import save_json
+from evaluation.classification_evaluator import ClassificationEvaluator
 
 
 class SequenceTrainer(BaseTrainer):

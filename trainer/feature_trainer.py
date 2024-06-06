@@ -1,14 +1,8 @@
 import time
 import datetime
 
-import torch
-
-from configs.experiment_mode import ExperimentMode
-from configs.task_type import TaskType
 from factory.model_factory import ModelFactory
-from utils.util import get_pretty_metric, print_msg, is_tfidf
-from sklearn.feature_extraction.text import TfidfVectorizer
-from evaluation.evaluator.classification_evaluator import ClassificationEvaluator
+from evaluation.classification_evaluator import ClassificationEvaluator
 
 
 class FeatureTrainer:

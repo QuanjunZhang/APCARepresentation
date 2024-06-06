@@ -1,9 +1,4 @@
 from dataset.custom import Custom
-from dataset.poj104clone_dataset import POJ104Clone
-from dataset.poj_dataset import POJ104
-from dataset.devign_dataset import Devign
-
-
 class DatasetFactory:
     name = "DatasetFactory"
 
@@ -18,13 +13,7 @@ class DatasetFactory:
         logger = config.logger
         dataset_name = config.dataset['name']
         logger.info("Dataset: %s" % dataset_name)
-        if dataset_name == "online-judge":
-            dataloader = POJ104(config)
-        elif dataset_name == "devign":
-            dataloader = Devign(config)
-        elif dataset_name == "poj104clone":
-            dataloader = POJ104Clone(config)
-        elif dataset_name == "custom":
+        if dataset_name == "custom":
             dataloader = Custom(config)
         else:
             raise SystemExit(Exception("Dataset Name %s is not found." % dataset_name))

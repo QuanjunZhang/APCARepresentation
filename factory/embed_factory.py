@@ -50,32 +50,3 @@ class NodeEmbedFactory:
         """
         if config.node_emb_layer['mode'] == "LSTMEmbedNode":
             return BothLSTMEmbedNode
-
-
-
-
-
-"""
-def get_node_emb(self):
-Get the node embedding layer based on the configuration
-:return:
-    # Since structure only a scalar value in the data, there is no need
-    # process it further
-    emb_tech = None
-    if self.config.use_nfeature == "structure":
-        emb_tech = EmbedNode(self.config)
-    elif self.config.use_nfeature == "textual":
-        # If it is structure or both type, we have three option
-        if self.config.node_emb_layer['mode'] == "LSTMEmbedNode":
-            # LSTM-based Representation
-            emb_tech = TextualLSTMEmbedNode(self.config)
-    elif self.config.use_nfeature == "both":
-        # If it is structure or both type, we have three option
-        if self.config.node_emb_layer['mode'] == "LSTMEmbedNode":
-            # LSTM-based Representation
-            emb_tech = BothLSTMEmbedNode(self.config)
-
-    if not emb_tech:
-        raise NotImplementedError
-    return emb_tech
-"""

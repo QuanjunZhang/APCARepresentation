@@ -22,12 +22,7 @@ class TrainerFactory:
         self.graph_experiments = [ModelType.TreeLSTM,
                                   ModelType.GCN,
                                   ModelType.GAT,
-                                  ModelType.GGNN,
-                                  ExperimentMode.TreeLSTM_Classify,
-                                  ExperimentMode.TreeLSTM_PairwiseClassify,
-                                  ExperimentMode.GCN_PairwiseClassify,
-                                  ExperimentMode.GAT_PairwiseClassify,
-                                  ExperimentMode.GGNN_PairwiseClassify]
+                                  ModelType.GGNN]
 
     def get_trainer(self, config):
         if config.model_type in self.tfidf_experiments:

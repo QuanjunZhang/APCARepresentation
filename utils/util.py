@@ -14,23 +14,6 @@ from tokenizer.vocab_dict import VocabDict, BPEVocabDict
 
 timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 
-
-def load_c_file(c_file_path):
-    """
-    Load the C File in C File Path as a string
-    :param c_file_path: The path of the C File
-    :return: Return a string of the C File
-    """
-    try:
-        with open(c_file_path, encoding='utf-8') as rfile:
-            code_content = rfile.read()
-        return code_content
-    except UnicodeDecodeError:
-        with open(c_file_path, encoding='windows-1252') as rfile:
-            code_content = rfile.read()
-        return code_content
-
-
 def load_txt(path):
     """
     Load a Text File or C File

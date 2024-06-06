@@ -12,21 +12,11 @@ from pymodels.classification.tfidf.naivebayes import NaiveBayesModel
 from pymodels.classification.tfidf.svm import SVMModel
 from pymodels.classification.tfidf.xgboost import XGBoostModel
 from pymodels.classification.tree.treelstm import TreeLSTMModel
-from pymodels.clone_detection.graph.pairwise_gat import PairwiseGATModel
-from pymodels.clone_detection.graph.pairwise_gcn import PairwiseGCNModel
-from pymodels.clone_detection.graph.pairwise_ggnn import PairwiseGGNNModel
-from pymodels.clone_detection.sequence.pairwise_lstm_model import PairwiseLSTMModel
-from pymodels.clone_detection.sequence.pairwise_transformer import PairwiseTransformerModel
-from pymodels.clone_detection.tree.pairwise_treelstm import PairwiseTreeLSTMModel
-
-
 
 class ModelFactory:
     @staticmethod
     def get_model(config):
-        if config.task_type == TaskType.Classification and config.task in [Task.VulnerabilityDetection,
-                                                                           Task.CodeClassification,
-                                                                           Task.CloneDetection]:
+        if config.task_type == TaskType.Classification and config.task in [Task.CodeClassification]:
             if config.model_type in [ModelType.XGBoost]:
                 return XGBoostModel
             elif config.model_type in [ModelType.SVM]:
@@ -54,33 +44,7 @@ class ModelFactory:
                 return GGNNModel
             else:
                 raise SystemExit(NotImplementedError("Unknown Classification PyModel: %s" % config.experiment_mode))
-        # elif config.task_type == TaskType.Classification and config.task == Task.PatchIdentification:
-        #     return LSTMClassifyModel
-
-        elif config.task_type == TaskType.PairwiseClassification:
-            if config.model_type in [ModelType.XGBoost]:
-                return XGBoostModel
-            elif config.model_type in [ModelType.SVM]:
-                return SVMModel
-            elif config.model_type in [ModelType.NaiveBayes]:
-                return NaiveBayesModel
-            elif config.model_type in [ModelType.LSTM,
-                                       ModelType.BiLSTM]:
-                return PairwiseLSTMModel
-            elif config.model_type == ModelType.TRANSFORMERENCODER:
-                return PairwiseTransformerModel
-            elif config.model_type == ModelType.TreeLSTM:
-                return PairwiseTreeLSTMModel
-            elif config.model_type == ModelType.GCN:
-                return PairwiseGCNModel
-            elif config.model_type == ModelType.GAT:
-                return PairwiseGATModel
-            elif config.model_type == ModelType.GGNN:
-                return PairwiseGGNNModel
-            else:
-                raise SystemExit(NotImplementedError("Unknown Pairwise Classification PyModel: %s" % config.model_type))
-
-
+        return None
 class DummyModel:
     def __init__(self):
         pass

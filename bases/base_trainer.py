@@ -2,10 +2,9 @@ import os
 import torch
 
 from tokenizer.vocab_dict import TokenizationConstant
-from utils.util import print_msg
 from utils.pymodels_util import to_cuda
 from factory.model_factory import ModelFactory
-from evaluation.evaluator.resultsaver import ResultSaver
+from evaluation.resultsaver import ResultSaver
 
 
 class BaseTrainer:
