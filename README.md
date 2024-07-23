@@ -1,9 +1,5 @@
 # On the Effectiveness of Code Representation in Automated Patch Correctness Assessment
 
-This is the official PyTorch implementation for the following TSE 2024 submission:
-
-Title: On the Effectiveness of Code Representation in Automated Patch Correctness Assessment
-
 ## project structure
 
 ```bash
