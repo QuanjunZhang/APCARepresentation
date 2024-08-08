@@ -41,6 +41,7 @@
 │   ├── custom.py: dataset customized for APCA tasks
 
 ├── data: patch files, intermediate result & dataset for different code representation
+│   ├── patch.zip: original patch files in .patch format, including 2277 deduplicated patches,3 exclude due to representation extraction failure, 2274 usable
 
 ├── utils
 
