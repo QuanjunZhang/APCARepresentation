@@ -1,7 +1,0 @@
---- com/google/javascript/jscomp/ProcessClosurePrimitives.java
-+++ com/google/javascript/jscomp/ProcessClosurePrimitives.java
-@@ -788,3 +788,3 @@
-        // modules. We need to move this code up to a common module.
--       int indexOfDot = namespace.indexOf('.');
-+	int indexOfDot = namespace.lastIndexOf('.');                                                            
-        if (indexOfDot == -1) {

@@ -1,9 +1,0 @@
-Index: com/google/javascript/jscomp/ControlFlowAnalysis.java
-============================================================
-++ com/google/javascript/jscomp/ControlFlowAnalysis.java
--- com/google/javascript/jscomp/ControlFlowAnalysis.java
-@@ +766,7 -766,7 @@
-             for (Node finallyNode : cfa.finallyMap.get(parent)) {              
-+              cfa.createEdge(fromNode, Branch.ON_EX, finallyNode);             
--              cfa.createEdge(fromNode, Branch.UNCOND, finallyNode);            
-             }

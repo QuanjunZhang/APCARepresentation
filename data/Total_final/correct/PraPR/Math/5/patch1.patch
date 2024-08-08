@@ -1,9 +1,0 @@
-Index: org/apache/commons/math3/complex/Complex.java
-====================================================
-++ org/apache/commons/math3/complex/Complex.java
--- org/apache/commons/math3/complex/Complex.java
-@@ +304,12 -304,12 @@
-	if (real == 0.0 && imaginary == 0.0) {
-+		return INF;
--		return NaN;
-	}
