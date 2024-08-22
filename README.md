@@ -49,6 +49,8 @@
 
 ├── test.py
 
+├── pretrain.py: code for pre-train models
+
 ├── README.MD
 ```
 
